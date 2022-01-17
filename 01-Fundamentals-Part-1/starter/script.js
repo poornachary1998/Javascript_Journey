@@ -90,9 +90,51 @@ change, and which might change?). Then, change these variables to const.
 let myLanguage = 'Telugu';
 const canWrite = true;
 console.log( myLanguage);
-console.log(location);
+console.log(canWrite);
 
-canWrite = false;
+//canWrite = false;
+
+//arthemathic operators
+
+const currentYear = 2021;
+const poornaAge = currentYear - 1998 ;
+const charyAge = currentYear - 2000;
+
+console.log( poornaAge, charyAge );
+console.log( poornaAge*3, charyAge-10, 3**9 );
+//3**9 means 3 to the power of 9
+
+//concat operator + 
+
+const myFirstName1 = "Poorna";
+const myMiddleName = "chary";
+
+console.log(myFirstName1 + myMiddleName);
+
+//for spacing
+
+console.log(myFirstName1+ ' ' + myMiddleName);
+
+//Assignment Operator = 
+
+let abc = 10 + 5;
+console.log(abc);
+// output 15
+abc+=10;
+console.log(abc);
+//abc+=10>>> abc = abc + 10; >>>15+10 = 25
+
+abc*=2;
+console.log(abc);
+//abc = abc*2; >>> 50
+
+abc++;
+console.log(abc);
+// abc = abc+1;
+abc--;
+console.log(abc);
+// abc = abc-1;
+
 
 
 
