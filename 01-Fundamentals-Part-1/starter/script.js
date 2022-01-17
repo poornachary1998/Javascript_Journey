@@ -1,9 +1,8 @@
-/*
-let x = "Java Script is a High level programming language";
+/*let x = "Java Script is a High level programming language";
 if (x==="Java Script is a High level programming language") 
 alert("JS is programming language");
 console.log(10+90+3-23);
-
+*/
 
  //variable is box whichwe can store a value
 
@@ -68,6 +67,8 @@ country. The variable should hold a Boolean value. Also declare a variable
 'language', but don't assign it any value yet
 2. Log the types of 'isIsland', 'population', 'country' and 'language'
 to the console*/
+
+
 let isIsland = false;
 let language;
 
@@ -75,3 +76,24 @@ console.log(typeof isIsland);
 console.log(typeof population);
 console.log(typeof country);
 console.log(typeof language);
+
+
+//let. const. var assignment.
+/*
+Set the value of 'language' to the language spoken where you live (some 
+countries have multiple languages, but just choose one)
+2. Think about which variables should be const variables (which values will never 
+change, and which might change?). Then, change these variables to const.
+3. Try to change one of the changed variables now, and observe what happens
+*/
+
+let myLanguage = 'Telugu';
+const canWrite = true;
+console.log( myLanguage);
+console.log(location);
+
+canWrite = false;
+
+
+
+
