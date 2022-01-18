@@ -95,7 +95,7 @@ console.log(canWrite);
 //canWrite = false;
 
 //arthemathic operators
-
+/*
 const currentYear = 2021;
 const poornaAge = currentYear - 1998 ;
 const charyAge = currentYear - 2000;
@@ -113,29 +113,100 @@ console.log(myFirstName1 + myMiddleName);
 
 //for spacing
 
-console.log(myFirstName1+ ' ' + myMiddleName);
+//console.log(myFirstName1+ ' ' + myMiddleName);
 
 //Assignment Operator = 
 
-let abc = 10 + 5;
-console.log(abc);
+//let abc = 10 + 5;
+//console.log(abc);
 // output 15
-abc+=10;
-console.log(abc);
+//abc+=10;
+//console.log(abc);
 //abc+=10>>> abc = abc + 10; >>>15+10 = 25
 
-abc*=2;
-console.log(abc);
+// abc*=2;
+// console.log(abc);
 //abc = abc*2; >>> 50
 
-abc++;
-console.log(abc);
+//abc++;
+//console.log(abc);
 // abc = abc+1;
-abc--;
-console.log(abc);
+//abc--;
+//console.log(abc);
 // abc = abc-1;
 
+//comparison operator the output will be boolean > < >= <=
+/*console.log(poornaAge >=20, charyAge>=19);
+
+const result = poornaAge>=20; */
+//console.log(result);
+
+//console.log( currentYear - 1999 > currentYear - 2018 );
+
+const currentYear = 2021;
+const poornaAge = currentYear - 1998 ;
+const charyAge = currentYear - 2000;
+
+console.log( currentYear - 1999 > currentYear - 2018 );
+
+let x , y;
+
+x = y = 25-10-1;
+console.log(x,y);
+
+//average of ages and how precedence takes place.
+
+// const averageAge= poornaAge + charyAge /2;
+const averageAge= (poornaAge + charyAge )/2;
+
+console.log (poornaAge, charyAge , averageAge);
+
+//>>output is 33.5 which is wrong. NOw we need to implement () where precendence is high
+
+//correct output is 22 with () using precedence takes place first for ();
+
+//coding challenge -1
+
+/*
+Mark and John are trying to compare their BMI (Body Mass Index), which is 
+calculated using the formula:
+
+BMI = mass / height ** 2 = mass / (height * height) (mass in kg 
+and height in meter).
+
+Your tasks:
+1. Store Mark's and John's mass and height in variables
+2. Calculate both their BMIs using the formula (you can even implement both 
+versions)
+3. Create a Boolean variable 'markHigherBMI' containing information about 
+whether Mark has a higher BMI than John.
 
 
+Test data:
+§ Data 1: Marks weights 78 kg and is 1.69 m tall. John weights 92 kg and is 1.95 
+m tall.
+§ Data 2: Marks weights 95 kg and is 1.88 m tall. John weights 85 kg and is 1.76 
+m tall.
+GOOD LUCK �
+*/
 
+var markMass = 78;
+var markHeight = 1.69;
+var johnMass = 92;
+var johnHeight = 1.95;
 
+markMass =95;
+markHeight = 1.88;
+johnMass = 85;
+johnHeight = 1.76;
+
+console.log(markMass , markHeight);
+console.log(johnMass,johnHeight);
+
+let bmiMarkResult = markMass / (markHeight * markHeight);
+let bmiJohnResult = johnMass / (johnHeight * johnHeight);
+
+console.log( bmiMarkResult , bmiJohnResult );
+
+let markHeightBMI = bmiMarkResult > bmiJohnResult;
+console.log(markHeightBMI);
