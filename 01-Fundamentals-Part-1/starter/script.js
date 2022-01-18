@@ -188,7 +188,7 @@ m tall.
 § Data 2: Marks weights 95 kg and is 1.88 m tall. John weights 85 kg and is 1.76 
 m tall.
 GOOD LUCK �
-*/
+
 
 var markMass = 78;
 var markHeight = 1.69;
@@ -209,4 +209,15 @@ let bmiJohnResult = johnMass / (johnHeight * johnHeight);
 console.log( bmiMarkResult , bmiJohnResult );
 
 let markHeightBMI = bmiMarkResult > bmiJohnResult;
-console.log(markHeightBMI);
+console.log(markHeightBMI);*/
+
+const mName = 'chary';
+const job = 'web dev';
+const year = 1998;
+const presentYear = 2022;
+//Before ES6
+const resultHere = "I'm " + mName + '. My age is ' + (presentYear-year) + ' and I am a ' + job +'.';
+console.log(resultHere);
+//After ES 6 Literals are introduced ``
+const resultHere1 = `I am ${mName}. My age is ${presentYear-year} and I am a ${job}`;
+console.log(resultHere1);
