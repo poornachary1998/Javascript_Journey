@@ -258,3 +258,30 @@ console.log( 'I am' + 23+ 'years old');
 console.log('20' - '10' - 3); 
 console.log('23'*'2');
 console.log('22'/'2');
+
+//Equity operator
+
+const age= 18;
+if ( age === 18)
+console.log('You are an adult ( Strict equality )');
+
+if (age == 18)
+console.log('You are an adult ( loose equality)');
+
+//exercise
+
+//const favi = prompt("What is your favorite number ?");
+const fav = Number(prompt("What is your favorite number ?"));
+
+console.log(fav);
+console.log(typeof(fav));
+
+if(fav === 27){
+    console.log("cool! The number is 27")
+} else if( fav === 7 )
+{
+    console.log("Number 7 is a cool number")
+}
+else{
+    console.log("The number is neither 27 nor 7");
+}
