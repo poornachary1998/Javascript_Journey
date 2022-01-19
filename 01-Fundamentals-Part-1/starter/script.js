@@ -29,7 +29,7 @@ console.log(population);
 
 
 //boolean
-true;
+//true;
 console.log(true);
 
 let javaScriptIsFun = true;
@@ -188,7 +188,7 @@ m tall.
 § Data 2: Marks weights 95 kg and is 1.88 m tall. John weights 85 kg and is 1.76 
 m tall.
 GOOD LUCK �
-
+*/
 
 var markMass = 78;
 var markHeight = 1.69;
@@ -208,8 +208,39 @@ let bmiJohnResult = johnMass / (johnHeight * johnHeight);
 
 console.log( bmiMarkResult , bmiJohnResult );
 
-let markHeightBMI = bmiMarkResult > bmiJohnResult;
-console.log(markHeightBMI);*/
+let markHighBMI = bmiMarkResult > bmiJohnResult;
+console.log(markHighBMI);
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+/*Strings and Template Literals */
+
+
+//coding challenge 2
+
+if(bmiMarkResult>bmiJohnResult){
+    console.log(`Mark's BMI (${bmiMarkResult}) is higher than John BMI`);
+}
+else{
+    console.log(`John BMI (${bmiJohnResult}) is higher than Mark BMI`);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 const mName = 'chary';
 const job = 'web dev';
@@ -221,3 +252,6 @@ console.log(resultHere);
 //After ES 6 Literals are introduced ``
 const resultHere1 = `I am ${mName}. My age is ${presentYear-year} and I am a ${job}`;
 console.log(resultHere1);
+
+
+
