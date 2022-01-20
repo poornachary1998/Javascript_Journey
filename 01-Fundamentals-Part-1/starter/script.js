@@ -365,7 +365,31 @@ else{
 }
 
 
+const day = 'monday';
 
+switch(day){
+    case 'monday': //day===monday
+    console.log('write code');
+    break;
+
+    case tuesday: //day===tuesday
+    console.log('practise code');
+    break
+    
+    case wednesday:
+    case thursday:
+    case friday:
+    console.log('Learn code and update in git');
+    break;
+
+    case saturday:
+    case sunday:
+    console.log('Weekend time');
+    break;
+
+    default:
+        console.log('Not a valid day');
+}
 
 
 
