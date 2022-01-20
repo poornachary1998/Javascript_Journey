@@ -393,7 +393,16 @@ switch(day){
 
 
 
+//conditional or ternary operator
 
+const myAge=23;
+
+const drink = myAge>=18?'wine':'water';
+console.log(drink);
+
+//or
+//conditional operator will exceute in template literals but if..else doesnot exceute in template literanls
+console.log(`i can drink ${myAge>=18?'wine':'water'}`);
 
 
 
