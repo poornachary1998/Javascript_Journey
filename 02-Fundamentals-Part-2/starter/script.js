@@ -22,7 +22,7 @@ ready();
 
 //Passing values to the function
 function fruitProcessor(Apples, Oranges){
-   // console.log(Apples, Oranges);
+   //  console.log(Apples, Oranges);
     const juice = `The juice is made of ${Apples} Apples and ${Oranges} Oranges`;
     return juice;
 }
@@ -38,3 +38,23 @@ console.log(appleJuice);
 //re-use function with different values
 const appleOrangeJuice = fruitProcessor(1,4);
 console.log(appleOrangeJuice);
+
+//function decleration
+
+function calcAge1(birthYear){
+    return 2022 - birthYear;
+}
+const age1 = calcAge1(1998);
+console.log(age1);
+
+//function expression
+
+const calcAge2 = function (birthYear1){
+return 2022-birthYear1;
+}
+
+const age2= calcAge2(1998);
+console.log(age2);
+
+
+
