@@ -11,7 +11,7 @@ if(moneyInCard)
 }
 
 let interface = true;*/
-
+/*
 //functions
 function ready(){
     console.log(`get ready for party`);
@@ -56,5 +56,31 @@ return 2022-birthYear1;
 const age2= calcAge2(1998);
 console.log(age2);
 
+//Arrow functions
+const calcAge3 = birthYear=> 2037-birthYear;
+const age3 = calcAge3(1998);
+console.log(age3);
 
 
+//number of years left for retirement
+
+const yearsLeftForRetirement = birthYear =>{
+    const age = 2022 - birthYear;
+    const retirement = 65 - age;
+    return retirement;
+}
+// multiple lines of code in side arrow function need return
+console.log(yearsLeftForRetirement(1991));*/
+
+//arrow function 3 arguments / parameters
+
+const ageLeftForAdult = (fullName, birthYear, weight) =>{
+    const age = 2022 - birthYear;
+    const ageForAdult = 18 - age;
+    return `The person ${fullName} whose ${birthYear} 
+    is birth year and has weight of ${weight} need to
+     complete ${ageForAdult} years for becoming adult`;
+}
+
+console.log(ageLeftForAdult('Poorna', 2010, 67));
+console.log(ageLeftForAdult('suraj',2020,1));
