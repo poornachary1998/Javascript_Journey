@@ -84,3 +84,40 @@ const ageLeftForAdult = (fullName, birthYear, weight) =>{
 
 console.log(ageLeftForAdult('Poorna', 2010, 67));
 console.log(ageLeftForAdult('suraj',2020,1));
+
+//function calling another function
+
+const fruitCutter = function(fruits){
+    return fruits*2;
+}
+
+const fruitProcessor1 = function (apples, oranges)
+{
+const applePieces = fruitCutter(apples);
+const orangePieces = fruitCutter(oranges);
+const juice = `The juice is made up of ${applePieces} apple pieces and ${orangePieces} orange pieces`;
+
+return juice;
+}
+
+console.log(fruitProcessor1(5,10));
+
+//reviewing functions converting arrow function to normal function
+const dateOfBirth = function(year){
+   return 2022 - year;
+}
+const yearsToRetire = function(birthYear)
+{
+    const age = dateOfBirth(birthYear);
+    const retirement  = 60 - age;
+if(retirement>0){
+    console.log(`The retirement time is ${retirement} years`);
+return retirement;
+console.log(`The retrement time is xyz..`);// after return statement it exists from function hence this line will not be exceuted.
+}
+else{
+return -1;
+}
+}
+console.log(yearsToRetire(2001));
+console.log(yearsToRetire(1960));
