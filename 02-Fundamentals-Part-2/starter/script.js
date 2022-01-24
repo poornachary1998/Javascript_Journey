@@ -195,6 +195,7 @@ console.log(friends[friends.length-1]);
 
 // In arrays, we cannot change complete array. but we can replace the elements
 friends[1] = 'Poorna';
+
 console.log(friends);
 
 //Array can hold any sort of data it can also hold another array as shown below:
@@ -209,3 +210,15 @@ const calCAge = function(birthYear){
 }
 // we want to colculate for some years
 const years = [1990,2000,2010,2020];
+
+//we cannot do this:
+//console.log(years);
+//It is not valid, because years is an array. Not value. Instead
+const age1 = calCAge(years[0]);
+const age2 = calCAge(years[1]);
+const age3 = calCAge(years[2]);
+const age4 = calCAge(years[years.length-1]);
+console.log(age1, age2, age3, age4);
+
+const ages = [calCAge(years[0]),calCAge(years[1]),calCAge(years[2]),calCAge(years[years.length-1])];
+console.log(ages);
