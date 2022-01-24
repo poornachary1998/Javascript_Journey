@@ -345,3 +345,8 @@ else{
 }
 
 //learning Dot and bracket notations for adding new properties in objects
+poorna.location = 'Hyderabad';
+poorna['twitter'] = '@poornachary';
+console.log(poorna);
+
+
