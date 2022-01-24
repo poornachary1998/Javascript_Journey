@@ -170,5 +170,25 @@ const checkWinner = function(avgDolphins, avgKoalas){
     }
 
 }
-
 checkWinner(scoreDolphins,scoreKoalas);
+
+//Arrays
+const friend1 = ' Micheal';
+const friend2 = 'Sam';
+const friend3  = 'jay';
+
+const friends = ['Micheal','sam','jay',1990,11];
+console.log(friends);
+//length is an operation in array which giver the length of array.
+//Length will not start with 0, starts with 1.
+console.log(friends.length);
+//another way to declare the length.
+const friends1 = new Array('Micheal','Sam','Jay');
+//Prints the elements in array
+console.log(friends1);
+//to find the length of array. we use lenght-1 because array starts with 0 index
+console.log(friends.length-1);
+// to print the element present in 0th index
+console.log(friends[0]);
+//we can also use [] for operations as well.
+console.log(friends[friends.length-1]);
