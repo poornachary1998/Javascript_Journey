@@ -305,3 +305,43 @@ const tips = [calcTip(billValue[0]),calcTip(billValue[1]),calcTip(billValue[2])]
 console.log(`the bills are ${billValue} The Tips are ${tips}`);
 const total = [billValue[0]+tips[0], billValue [1]+tips[1],billValue [2]+tips[2]];
 console.log(total);
+
+//objects are used similar to the arrays
+//let us see how to use objects
+
+const poorna = {
+    firstName : 'Poorna chary',
+    lastName : 'Narsingosu',
+    age : 2022 - 1998,
+    job : 'Front - End Developer',
+    friends : ['Nithish','charan','Rohit']
+};
+
+console.log(poorna);
+
+  //How to retrive the data from objects. It can be done in 2 ways.
+  //1.DOT Notation
+  //2.Bracket Notation
+//Taking above example for reference:
+
+console.log(poorna.lastName); //returns last name directly. so simple. DOT Notation
+
+//Bracket Notation
+console.log(poorna['lastName']); //We use brackets but the main diff is we can use expressions / computed property names in brackets
+
+//computed expression example:
+const nameKey = 'Name';
+console.log('first'+ nameKey);
+console.log('last'+ nameKey);
+//sample for usage of Bracket notation
+const intrestedIn = prompt("what would you like to know about Poorna? firstName, lastName, age, job, and friends");
+//console.log(poorna[intrestedIn]);
+
+if(poorna[intrestedIn]){
+    console.log(poorna[intrestedIn]);
+}
+else{
+    console.log("wrong request, Choose between firstName, lastName, age, job, and friends")
+}
+
+//learning
