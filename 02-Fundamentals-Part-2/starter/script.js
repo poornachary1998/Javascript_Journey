@@ -344,4 +344,4 @@ else{
     console.log("wrong request, Choose between firstName, lastName, age, job, and friends")
 }
 
-//learning
+//learning Dot and bracket notations for adding new properties in objects
