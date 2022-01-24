@@ -171,7 +171,7 @@ const checkWinner = function(avgDolphins, avgKoalas){
 
 }
 checkWinner(scoreDolphins,scoreKoalas);
-
+/*
 //Arrays
 const friend1 = ' Micheal';
 const friend2 = 'Sam';
@@ -221,4 +221,50 @@ const age4 = calCAge(years[years.length-1]);
 console.log(age1, age2, age3, age4);
 
 const ages = [calCAge(years[0]),calCAge(years[1]),calCAge(years[2]),calCAge(years[years.length-1])];
-console.log(ages);
+console.log(ages);   */
+
+//push operation>> toadd element in last in an array
+
+const friendsOne = ['Micheal','sam','jay'];
+const newLength = friendsOne.push('chary');
+console.log(friendsOne);
+console.log(newLength);
+
+//pop operation >> removes last element in array.
+
+console.log(friendsOne.pop());
+console.log(friendsOne);
+
+//unshift operation to add a element in the starting of array
+
+console.log(friendsOne.unshift('Ram'));
+console.log(friendsOne)
+
+//shift operation is used to remove the first element in array
+
+console.log(friendsOne.shift());
+console.log(friendsOne);
+
+//indexOf returns the index of element in array
+
+console.log(friendsOne.indexOf('sam'));
+console.log(friendsOne);
+
+//includes >> returns true or false values. if the element is present in array or not.
+
+console.log(friendsOne.includes('sam')); //true;
+
+//includes operator is strict equity.
+friendsOne.push(23); //type is number
+console.log(friendsOne.includes('23')); //searching for string>> false
+console.log(friendsOne.includes(23));//>> true
+
+//example for conditional statement
+
+if(friendsOne.includes('sam')){
+    console.log("Array has sam user");
+}
+else
+{
+    console.log("array does not have sam user");
+}
