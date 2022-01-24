@@ -192,3 +192,20 @@ console.log(friends.length-1);
 console.log(friends[0]);
 //we can also use [] for operations as well.
 console.log(friends[friends.length-1]);
+
+// In arrays, we cannot change complete array. but we can replace the elements
+friends[1] = 'Poorna';
+console.log(friends);
+
+//Array can hold any sort of data it can also hold another array as shown below:
+
+const testArray = ['Poorna', 123, 2016-2015 , friends];
+console.log(testArray);
+
+//array exercise
+
+const calCAge = function(birthYear){
+    return 2022-birthYear;
+}
+// we want to colculate for some years
+const years = [1990,2000,2010,2020];
