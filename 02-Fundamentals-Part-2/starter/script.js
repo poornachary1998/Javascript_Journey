@@ -467,3 +467,10 @@ if(person1.calcBMI() > person2.calcBMI()){
 else{
     console.log(`${person2.fullName}'s BMI ${person2.BMI} is higher than ${person1.fullName}'s BMI ${person1.BMI}`);
 }
+ 
+//loops
+//for loop
+
+for(let rep =1; rep<=10; rep++){
+    console.log(`The rep count is ${rep}`);
+}
