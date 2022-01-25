@@ -308,7 +308,7 @@ console.log(total);
 
 //objects are used similar to the arrays
 //let us see how to use objects
-
+/*
 const poorna = {
     firstName : 'Poorna chary',
     lastName : 'Narsingosu',
@@ -348,5 +348,56 @@ else{
 poorna.location = 'Hyderabad';
 poorna['twitter'] = '@poornachary';
 console.log(poorna);
+*/
 
 
+const poorna = {
+    firstName : 'Poorna chary',
+    lastName : 'Narsingosu',
+    birthYear : 1998,
+    job : 'Front - End Developer',
+    friends : ['Nithish','charan','Rohit'],
+    hasDriverLicense: true,
+
+/*    calcAge : function(birthYear) {
+        return 2022-birthYear;
+    }*/
+
+    /*calcAge : function(){
+        return 2022- this.birthYear;
+    }*/
+
+    calcAge : function(){
+        this.age = 2022 - this.birthYear;
+        //this.age is an Dot notation adding age property in object  
+        return this.age;//stored in age property in object
+    }
+};
+
+//1.Function expression:
+/* const calcAge = function(birthYear){
+    return 2022-1998;
+}
+*/
+//console.log(poorna.calcAge(1998));
+//The above line is not ideal because we already have birthyear in object properties.
+
+console.log(poorna.calcAge());
+//If we want to use this calcAge again in code, we need to write the same line again and again
+//which is not correct 'Dont repeat yourself'
+//so we need to store the calcAge in a object and use in code.
+/*
+console.log(poorna.calcAge());
+console.log(poorna.calcAge());
+console.log(poorna.calcAge());
+*/
+
+
+console.log(poorna.age);
+console.log(poorna.age);
+console.log(poorna.age);
+
+//challenge:
+// A method called getSummary and this method should summarize the data about poorna.
+
+//"Poorna is a 24 year old web dev, and he has a drivers license"
