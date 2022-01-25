@@ -474,3 +474,67 @@ else{
 for(let rep =1; rep<=10; rep++){
     console.log(`The rep count is ${rep}`);
 }
+/*
+const about = [
+    'Poorna chary',
+    'Narsingosu',
+    2022 - 1998,
+   'Front - End Developer',
+    ['Nithish','charan','Rohit']
+];
+//new array of types 
+const types=[];
+
+for (let i = 0; i < about.length ; i++) 
+{
+    // reading from about array
+    console.log(about[i], typeof about[i]);
+//filling type arrays
+    //types[i]= typeof about[i];
+
+    //another way for filling types
+    types.push(typeof about[i]);
+}
+console.log(types);
+*/
+
+const years = [1991,1988,2001,2022];
+
+//calculate the age for all the years and store with loops
+
+const ages =[];
+for (let j=0;j<years.length;j++)
+{
+ages.push (2022-years[j]);
+}
+
+console.log(ages);
+
+const about = [
+    'Poorna chary',
+    'Narsingosu',
+    2022 - 1998,
+   'Front - End Developer',
+    ['Nithish','charan','Rohit']
+];
+
+console.log('++++++++++++++++only strings by continue+++++++++++');
+for(let i = 0; i<about.length ;i++)
+{
+    if(typeof about[i] !=='string') continue;
+//if the type of current element is not string then continue.
+//exit from current iteration and next one starts immediately.
+//if it is a string then below will exceute
+
+console.log(about[i], typeof about[i]);
+}
+console.log('+++++++++++++++break with only number++++++++++++++++');
+for(let i = 0; i<about.length ;i++)
+{
+    if(typeof about[i] ==='number') break;
+//if the type of current element is number then break.
+//exit from complete iteration and next one starts immediately.
+//if it is a string then below will exceute
+
+console.log(about[i], typeof about[i]);
+}
