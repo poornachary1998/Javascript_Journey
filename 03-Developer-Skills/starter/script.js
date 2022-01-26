@@ -68,7 +68,7 @@ const maxTemp2 = [12, 5, -5, 0, 4];
 // );
 
 const printForecast = function (arr) {
-  let str = "";
+  let str = '';
   for (let i = 0; i <= maxTemp.length - 1; i++) {
     // console.log(`${maxTemp[i]}ºC in ${i + 1}days `);
     str = str + ` ... ${maxTemp[i]}ºC in  ${i + 1}days `;
