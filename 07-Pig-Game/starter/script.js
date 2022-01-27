@@ -16,12 +16,22 @@ let currentScore = 0;
 let activePlayer = 0;
 score0El.textContent=0;
 score1El.textContent=0;
+let playing  = true;
 //hide the dice before starting the dice
 diceEl.classList.add('hidden');
 
+const switchPlayer = function(){
+    document.getElementById(`current--${activePlayer}`).textContent = 0;
+currentScore = 0;
+activePlayer = activePlayer === 0 ? 1 : 0; //If the active player is 0 then change the turn to player 1. else keep the active player as 0;
+
+player0.classList.toggle('player--active');
+player1.classList.toggle('player--active')
+}
+
 //Rolling dice functionality
 btnRoll.addEventListener('click', function()
-{
+{ if (playing){
 // 1. Generate a random number
 const dice = Math.trunc(Math.random()*6)+1;
 console.log(dice);
@@ -39,12 +49,42 @@ document.getElementById(`current--${activePlayer}`).textContent = currentScore;/
 
 }
 else{
-//switch the user
-document.getElementById(`current--${activePlayer}`).textContent = 0;
-currentScore = 0;
-activePlayer = activePlayer === 0 ? 1 : 0; //If the active player is 0 then change the turn to player 1. else keep the active player as 0;
+// //switch the user(we created a function because we need to switch user in different scenario as well)
+switchPlayer();
+// document.getElementById(`current--${activePlayer}`).textContent = 0;
+// currentScore = 0;
+// activePlayer = activePlayer === 0 ? 1 : 0; //If the active player is 0 then change the turn to player 1. else keep the active player as 0;
 
-player0.classList.toggle('player--active');
-player1.classList.toggle('player--active')
+// player0.classList.toggle('player--active');
+// player1.classList.toggle('player--active')
+}}
+});
+btnHold.addEventListener('click',function()
+{
+if (playing){
+    //1. add current score to active player's score
+scores[activePlayer]+= currentScore;
+
+document.getElementById(`score--${activePlayer}`).textContent = scores[activePlayer];
+
+//2.check if player's score is >= 100
+//FInish the game
+
+if (scores[activePlayer]>=10){
+    playing = false;
+
+    // if active player is 1 and he wins the game, player--1 classlist adds properties mentioned in css .player-winner
+    document
+    .querySelector(`.player--${activePlayer}`)
+    .classList.add('player--winner');
+//the other player who is active player 0 the class list will remove
+document
+        .querySelector(`.player--${activePlayer}`)
+        .classList.remove('player--active');
+}
+else{
+//3.switch to next player
+switchPlayer();
+}
 }
 });
