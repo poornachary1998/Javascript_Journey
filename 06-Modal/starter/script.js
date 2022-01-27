@@ -68,7 +68,11 @@ document.addEventListener('keydown', function (event) {
   console.log(event.key);
   //This prints which key exactly we pressed
 
-  if (event.key === 'Escape') {
-    console.log('Esc was pressed');
+  if (event.key === 'Escape' && modal.classList.contains('hidden')) 
+    // console.log('Esc was pressed');
+  // if(!modal.classList.contains('hidden'))
+  {
+closeModal();
   }
+
 });
