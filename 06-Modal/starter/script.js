@@ -34,6 +34,7 @@ for (let i = 0; i < btnOpen.length; i++)
 //The above to confirm we are able to click buttons using JS.
 //we are not changing the hidden content to show  up when we click on the button.
 // modal.classList.remove('hidden');
+//hidden is an class in css where it hides the content and we should not use .hidden only hidden is used;
 // overlay.classList.remove('hidden');
 //code for when we click on X button the modals should appear and backgorund blur should disappear
 //   btnClose.addEventListener('click', function () {
@@ -51,3 +52,23 @@ for (let i = 0; i < btnOpen.length; i++)
 
 btnClose.addEventListener('click', closeModal);
 overlay.addEventListener('click', closeModal);
+
+//Lets focus on key press event - key word press
+// westill use add event listener another type of event
+//keyword event are called global events
+//key up when we lift the finger off the keyboard; key press>> continue actions on key; keydown >> as soon aswe press down the key
+//add event listener works for all keys not specific to one key
+
+document.addEventListener('keydown', function (event) {
+  //   console.log(' a key was  pressed');
+  //   console.log(event);
+  //now we can see the key in console which key we pressed using event - keyboardevent
+  //in console if we expand the keyboard events we can find the key : attribute it hold the key we pressed.
+
+  console.log(event.key);
+  //This prints which key exactly we pressed
+
+  if (event.key === 'Escape') {
+    console.log('Esc was pressed');
+  }
+});
