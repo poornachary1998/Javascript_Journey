@@ -91,3 +91,42 @@ function deleteAllProducts() {
 }
 //declare varaiables in top of code. looks better
 // always declare the functions and then use them only after declearations
+
+//this keyword practise
+console.log(this);
+
+// inside a regular function call
+
+const age = function (birthyear) {
+  console.log(2030 - birthyear);
+  console.log(this);
+};
+age(1999);
+// says undefined in regular function call because the function is not attached to any object
+
+//let see if this is an arrow function
+const ageArrow = birthyear => {
+  console.log(2030 - birthyear);
+  console.log(this);
+};
+ageArrow(1999);
+
+//returns a window, because the arrow function doesnot gets own this keyword.
+//it picks up from lexical scope means it takes from parents scope
+//window is the this keyword in global scope refer line 96
+
+// this keyword inside of a method
+
+const jonas = {
+  year: 1991,
+  job: 'teacher',
+  calcAge: function () {
+    console.log(this);
+    console.log(2037 - this.year);
+  },
+};
+
+jonas.calcAge();
+
+//the output gives the complete object after this keyword is used
+//reason the owner is jonas object, this keyword points to the owner object which calls the function
