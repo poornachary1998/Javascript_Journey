@@ -130,3 +130,24 @@ jonas.calcAge();
 
 //the output gives the complete object after this keyword is used
 //reason the owner is jonas object, this keyword points to the owner object which calls the function
+
+//primitives vs objects
+
+let lastName = 'Poorna';
+let oldLastName = lastName;
+lastName = 'Davis';
+console.log(lastName);
+console.log(oldLastName);
+//works fine with primitives
+
+//with object
+const jessica = {
+  fName: 'Jessica',
+  lName: 'steve',
+  age: 27,
+};
+
+const marriedJessica = jessica; //we are copying tge reference, whichpoints to the same object
+marriedJessica.lastName = 'Davis';
+console.log(jessica);
+console.log(marriedJessica);
