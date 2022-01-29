@@ -26,6 +26,11 @@ const restaurant = {
       `order recieved! ${this.starterMenu[startIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`
     );
   },
+
+  orderPasta: function (ing1, ing2, ing3) {
+    console.log(`Here's your delicious food item with ${ing1},${ing2},${ing3}`);
+  },
+
   openingHours: {
     thu: {
       open: 12,
@@ -41,10 +46,73 @@ const restaurant = {
     },
   },
 };
+
+//spread operator >>used to expand all elements in array
+
+//1.example
+const ar1 = [7, 8, 9];
+//if you want to add 1 and 3  begining of array then instead of adding manually
+const arnew = [1, 2, ...ar1];
+console.log(arnew);
+//[1, 2, 7, 8, 9] output
+
+//2.when we pass many values as arguments
+console.log(...arnew);
+//output: 1 2 7 8 9
+
+//3.new food item in main menu
+const newMainMenu = [...restaurant.mainMenu, 'roti'];
+console.log(newMainMenu);
+//output:['Pizza', 'Pasta', 'Risotto', 'roti']
+
+//4. removing the elements from array
+
+//5.shadowcoping of arrays
+//let us create a new copy of main menu
+
+const copyMainMenu = [...restaurant.mainMenu];
+console.log(copyMainMenu);
+//output: ['Pizza', 'Pasta', 'Risotto']
+
+//6. join two arrays: join main menu and startmenu
+
+const finalMenu = [...restaurant.mainMenu, ...restaurant.starterMenu];
+console.log(finalMenu);
+// ['Pizza', 'Pasta', 'Risotto', 'Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad']
+
+//spread operator also works on strings
+//7. spread operator on strings
+
+const str = 'poorna';
+console.log(...str);
+// p o o r n a
+
+//8.function that takes many values as arguments we are creating a function in restaurant
+
+const ingrediants = [
+  prompt(`give me the food ingrediant 1`),
+  prompt(`ingrediant 2`),
+  prompt(`ingrediant 3`),
+];
+
+restaurant.orderPasta(ingrediants[0], ingrediants[1], ingrediants[2]);
+//Here's your delicious food item with rice,sambar,pappu
+
+//9. from 2018 spread operator can also be used in objects
+//we are adding an property to existing object
+
+const newResto = { ...restaurant, founder: 'poorna' };
+console.log(newResto);
+/*
+categories: (4) ['Italian', 'Pizzeria', 'Vegetarian', 'Organic']
+founder: "poorna"
+location: "Via Angelo Tavanti 23, Firenze, Italy"
+mainMenu: (3) ['Pizza', 'Pasta', 'Risotto']
+*/
 //object destruction
 
-const { name, openingHours } = restaurant;
-console.log(name, openingHours);
+let { name1, openingHours } = restaurant;
+console.log(name1, openingHours);
 
 //to remove property name of object and give custom name
 const { name: RestoName, openingHours: workHours } = restaurant;
