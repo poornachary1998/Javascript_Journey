@@ -15,6 +15,17 @@ const restaurant = {
   order: function (startIndex, mainIndex) {
     return [this.starterMenu[startIndex], this.mainMenu[mainIndex]];
   },
+
+  orderDelivery: function ({
+    startIndex,
+    mainIndex,
+    time = '20 mins from the order time',
+    address,
+  }) {
+    console.log(
+      `order recieved! ${this.starterMenu[startIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`
+    );
+  },
   openingHours: {
     thu: {
       open: 12,
@@ -30,7 +41,47 @@ const restaurant = {
     },
   },
 };
+//object destruction
 
+const { name, openingHours } = restaurant;
+console.log(name, openingHours);
+
+//to remove property name of object and give custom name
+const { name: RestoName, openingHours: workHours } = restaurant;
+console.log(RestoName, workHours);
+
+//default values
+const { menu1 = [], starterMenu: starter1 = [] } = restaurant;
+console.log(menu1, starter1);
+
+//mutating variables
+
+let a = 111;
+let b = 33;
+const obj = { a: 33, b: 11, c: 111 };
+({ a, b } = obj);
+console.log(a, b);
+
+//nested objects
+const {
+  fri: { open, close },
+} = openingHours;
+console.log(open, close);
+
+//real time example, we created an new function orderDelivery
+
+restaurant.orderDelivery({
+  time: '22:30',
+  address: 'Karimnagar',
+  startIndex: 1,
+  mainIndex: 1,
+});
+restaurant.orderDelivery({
+  address: 'Karimnagar',
+  startIndex: 1,
+  mainIndex: 1,
+});
+/* Array Destruction
 const arr = [2, 3, 4];
 const a = arr[0];
 const b = arr[1];
@@ -94,3 +145,5 @@ console.log(a1, b1, c1); // 8 9 undefined is the output
 const [a2 = 1, b2 = 1, c2 = 1] = [8, 9];
 console.log(a2, b2, c2);
 //output is 8 9 1
+
+*/
