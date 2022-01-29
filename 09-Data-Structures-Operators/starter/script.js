@@ -30,7 +30,12 @@ const restaurant = {
   orderPasta: function (ing1, ing2, ing3) {
     console.log(`Here's your delicious food item with ${ing1},${ing2},${ing3}`);
   },
-
+  //rest pattern
+  orderPizza: function (mainIngrediant, ...otherIngrediants) {
+    console.log(mainIngrediant);
+    console.log(otherIngrediants);
+  },
+  //rest pattern finish
   openingHours: {
     thu: {
       open: 12,
@@ -89,13 +94,13 @@ console.log(...str);
 
 //8.function that takes many values as arguments we are creating a function in restaurant
 
-const ingrediants = [
-  prompt(`give me the food ingrediant 1`),
-  prompt(`ingrediant 2`),
-  prompt(`ingrediant 3`),
-];
+// const ingrediants = [
+//   prompt(`give me the food ingrediant 1`),
+//   prompt(`ingrediant 2`),
+//   prompt(`ingrediant 3`),
+// ];
 
-restaurant.orderPasta(ingrediants[0], ingrediants[1], ingrediants[2]);
+// restaurant.orderPasta(ingrediants[0], ingrediants[1], ingrediants[2]);
 //Here's your delicious food item with rice,sambar,pappu
 
 //9. from 2018 spread operator can also be used in objects
@@ -109,6 +114,10 @@ founder: "poorna"
 location: "Via Angelo Tavanti 23, Firenze, Italy"
 mainMenu: (3) ['Pizza', 'Pasta', 'Risotto']
 */
+
+// Rest Pattern
+restaurant.orderPizza('mushrooms', 'Onions', 'veggies');
+
 //object destruction
 
 let { name1, openingHours } = restaurant;
