@@ -224,3 +224,61 @@ console.log(a2, b2, c2);
 //output is 8 9 1
 
 */
+
+//logical assignment operator
+
+const rest1 = {
+  name: 'poorna',
+  // numGuests: 20,
+  numGuests: 0,
+};
+const rest2 = {
+  name2: 'chary',
+  owner: 'Lavanya',
+};
+
+//we need to add or get numguests for rest2 which doesnot have this property
+
+//1.OR operator
+
+rest2.numGuests = rest1.numGuests || 5;
+console.log(rest2);
+//{name2: 'chary', owner: 'Lavanya', numGuests: 20}
+
+// which is similar to
+rest2.numGuests || 5;
+console.log(rest2);
+// {name2: 'chary', owner: 'Lavanya', numGuests: 20}
+// the value of numGuests is 20 in rest 1 which is truthy value hence the outout for the rest2 guets is also 20
+
+//situation: if the num guests are 0 in rest1, then the output will be 5 for rest 2 guests
+// reason: 0 is falsy value. to over come this we have
+// 2.logical coalescing operator ??
+//we have changed the numGuests to 0 in rest 1
+rest2.numGuests || 5;
+// {name2: 'chary', owner: 'Lavanya', numGuests: 5} output
+
+rest1.numGuests ?? 5;
+console.log(rest1);
+//output: {name: 'poorna', numGuests: 0}
+
+rest2.numGuests ??= 5;
+console.log(rest2);
+// output: {name2: 'chary', owner: 'Lavanya', numGuests: 5}
+
+// 3.logical AND operator
+//if we want to make any owner as anonymous then see the below
+
+rest2.owner = rest2.owner && '<anonymouns>';
+console.log(rest2);
+//in the above example the both values are truthy
+//as per and short circuit it displays the last value in output
+// {name2: 'chary', owner: '<anonymouns>', numGuests: 5}
+
+// alsowritten in
+rest1.owner &&= '<Unknown>';
+rest2.owner &&= '<Unknown>';
+console.log(rest1, rest2);
+
+// output:{name: 'poorna', numGuests: 0}
+//  {name2: 'chary', owner: '<Unknown>', numGuests: 5}
