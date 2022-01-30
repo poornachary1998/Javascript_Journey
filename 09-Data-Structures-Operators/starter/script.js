@@ -405,3 +405,16 @@ printGoals('Davies', 'Muller', 'Lewandowski', 'Kimmich');
 //7.solution
 
 team1 < team2 && console.log(`team1 is more likely to win`);
+
+//for-of loop
+
+const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+for (const item of menu) {
+  console.log(item);
+}
+
+//index-of for of loop
+
+for (const item1 of menu.entries()) {
+  console.log(item1);
+}
