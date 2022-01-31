@@ -449,7 +449,8 @@ console.log(restaurant.openingHours?.mon?.open);
 
 const days = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
 for (const day of days) {
-  const output = restaurant.openingHours[day]?.open;
+  const output = restaurant.openingHours[day]?.open; //we can also use || or ?? based on requirement
+
   console.log(`on ${day}, we open at ${output}`);
 }
 
@@ -461,3 +462,12 @@ for (const day of days) {
 // script.js:453 on fri, we open at 11
 // script.js:453 on sat, we open at 0
 // // script.js:453 on sun, we open at undefined
+
+//methods, we can check if the method is exists or not
+console.log(restaurant.order?.(1, 0) ?? `Method does not exists`);
+//
+//  ['Bruschetta', 'Pizza']
+
+//works also on arrays- we can check if an array is empty
+const users = [{ name: 'jonas', email: 'hello@xys' }];
+console.log(users[0]?.name ?? ' user array is empty');
