@@ -418,3 +418,46 @@ for (const item of menu) {
 for (const item1 of menu.entries()) {
   console.log(item1);
 }
+
+//optional chaining concept
+
+// console.log(restaurant.openingHours.mon);
+// undefined because mon is not available in opening hours
+
+// to checkif the mon is available or not
+if (restaurant.openingHours.mon) {
+  console.log(restaurant.openingHours.mon.open);
+}
+
+//as the above mon is not available then the if will not execuete
+
+//in more complex to check we use
+if (restaurant.openingHours && restaurant.openingHours.mon) {
+  console.log(restaurant.openingHours.mon.open);
+}
+
+//in order to avoid such complexites we have optional chaining
+
+console.log(restaurant.openingHours.mon?.open);
+//undefined same as above, if the mon is available then only it returns the open time
+
+// we can also check like this
+console.log(restaurant.openingHours?.mon?.open);
+//the above one says if opening hours are available then it checks for mon if mon is available then it looks for open time
+
+// example: to print the all week days working time
+
+const days = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+for (const day of days) {
+  const output = restaurant.openingHours[day]?.open;
+  console.log(`on ${day}, we open at ${output}`);
+}
+
+// //
+// on mon, we open at undefined
+// script.js:453 on tue, we open at undefined
+// script.js:453 on wed, we open at undefined
+// script.js:453 on thu, we open at 12
+// script.js:453 on fri, we open at 11
+// script.js:453 on sat, we open at 0
+// // script.js:453 on sun, we open at undefined
