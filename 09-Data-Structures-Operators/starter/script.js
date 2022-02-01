@@ -528,3 +528,55 @@ for (const [key, { open, close }] of entries) {
 // On {$day} we open at 12 and close at 22
 // script.js:525 On {$day} we open at 11 and close at 23
 // script.js:525 On {$day} we open at 0 and close at 24
+
+// Sets: it is a new data structure and iterable which contains only unique values
+
+const orderSet = new Set([
+  'pizza',
+  'burger',
+  'pasta',
+  'pizza',
+  'burger',
+  'pasta',
+]);
+console.log(orderSet);
+//  {'pizza', 'burger', 'pasta'} all unique items
+
+//to know the size of set
+console.log(orderSet.size);
+// 3
+
+//TO know a element is in set or not
+console.log(orderSet.has('burger'));
+console.log(orderSet.has('lemon'));
+// true
+//  false
+
+// to add new elements into set
+console.log(orderSet.add('Garlic'));
+console.log(orderSet.add('Garlic'));
+// we added garlic 2 times but in output only once is shown
+// {'pizza', 'burger', 'pasta', 'Garlic'}
+
+// Delete the items in set
+console.log(orderSet.delete('Garlic'));
+console.log(orderSet);
+// {'pizza', 'burger', 'pasta'}
+
+// to clear all items in set
+// orderSet.clear();
+// console.log(orderSet);
+// {size: 0}
+
+// examples
+const staff = ['waiter', 'manager', 'chef', 'waiter', 'manager', 'chef'];
+const staffUnique = [...new Set(staff)];
+console.log(staffUnique);
+
+//to know the size
+console.log(
+  new Set(['waiter', 'manager', 'chef', 'waiter', 'manager', 'chef']).size
+);
+
+// to know the letter length
+console.log(new Set('poorna').size);
