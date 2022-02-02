@@ -580,3 +580,78 @@ console.log(
 
 // to know the letter length
 console.log(new Set('poorna').size);
+
+// Maps: Fundamentals
+// Maps is a data structure used to map values to the keys
+
+// empty map
+const rst = new Map();
+
+//insert values and keys in map
+
+rst.set('name', 'classico Italiana');
+rst.set(1, 'Ferrior, Italy');
+rst.set(2, 'lisbon,portugal');
+console.log(rst);
+// 0: {"name" => "classico Italiana"}
+// 1: {1 => "Ferrior, Italy"}
+// 2: {2 => "lisbon,portugal"}
+
+// similarly we can also add many to map like below
+
+rst
+  .set('categories', ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'])
+  .set('open', 8)
+  .set('close', 20)
+  .set(true, 'We are open')
+  .set(false, 'we are close');
+console.log(rst);
+
+/*0: {"name" => "classico Italiana"}
+1: {1 => "Ferrior, Italy"}
+2: {2 => "lisbon,portugal"}
+3: {"categories" => Array(4)}
+4: {"open" => 11}
+5: {"close" => 20}
+6: {true => "We are open"}
+7: {false => "we are close"}*/
+
+// to retrive from map we have get method
+
+console.log(rst.get('open')); //gives the value for open key
+console.log(rst.get(true));
+
+// 11
+// script.js:622 We are open
+
+// power of booleans in maps
+const time = 21;
+console.log(rst.get(time > rst.get('open') && time < rst.get('close')));
+// we are close
+
+// to check if map contains a key or not
+console.log(rst.has('categories'));
+// true
+
+// to delete items in map
+rst.delete('categories');
+console.log(rst);
+// categories key is removed.
+
+// to remove everything from map
+// rst.clear();
+// console.log(rst);
+
+// mapping arrays and objects
+
+const arrOne = [1, 2];
+
+rst.set(arrOne, 'poorna');
+// rst.set([1,2],'poorna');
+// console.log([1,2]); >> invalid move
+console.log(rst);
+
+// key: (2) [1, 2]
+// value: "poorna"
+
+// rst.set(document.querySelector('h1'), 'heading');
