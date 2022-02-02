@@ -663,7 +663,7 @@ const ques = new Map([
   [1, 'C'],
   [2, 'Java'],
   [3, 'Javasscript'],
-  [('correct', 3)],
+  ['correct', 3],
   [true, 'Correct'],
   [false, 'Wrong answer'],
 ]);
@@ -688,13 +688,48 @@ console.log(hoursMap);
 2: {"sat" => Object}
 */
 
-console.log(ques.get('question'));
-for (const [key, value] of ques) {
-  if (typeof key === 'number') {
-    console.log(`The answer: ${key} : ${value}`);
-  }
-}
-const ans = Number(prompt(`Enter your answer`));
-console.log(ans);
+// console.log(ques.get('question'));
+// for (const [key, value] of ques) {
+//   if (typeof key === 'number') {
+//     console.log(`The answer: ${key} : ${value}`);
+//   }
+// }
+// const ans = Number(prompt(`Enter your answer`));
+// console.log(ans);
 
-console.log(ques.get(ques.get('correct') === ans));
+// console.log(ques.get(ques.get('correct') === ans));
+
+// converting maps to arrays
+
+console.log([...ques]);
+/*
+0: (2) ['question', 'What is your fav programming language']
+1: (2) [1, 'C']
+2: (2) [2, 'Java']
+3: (2) [3, 'Javasscript']
+4: (2) ['correct', 3]
+5: (2) [true, 'Correct']
+6: (2) [false, 'Wrong answer']
+*/
+
+console.log([ques.keys()]);
+/*
+0: "question"
+1: 1
+2: 2
+3: 3
+4: "correct"
+5: true
+6: false
+*/
+
+console.log([ques.values()]);
+/*
+0: "What is your fav programming language"
+1: "C"
+2: "Java"
+3: "Javasscript"
+4: 3
+5: "Correct"
+6: "Wrong answer"
+*/
