@@ -655,3 +655,46 @@ console.log(rst);
 // value: "poorna"
 
 // rst.set(document.querySelector('h1'), 'heading');
+
+// another way of declaring maps instead of set function
+
+const ques = new Map([
+  ['question', 'What is your fav programming language'],
+  [1, 'C'],
+  [2, 'Java'],
+  [3, 'Javasscript'],
+  [('correct', 3)],
+  [true, 'Correct'],
+  [false, 'Wrong answer'],
+]);
+console.log(ques);
+
+// convert objects to Maps
+
+// objectentries example
+console.log(Object.entries(openingHours));
+
+/*[Array(2), Array(2), Array(2)]
+0: (2) ['thu', {…}]
+1: (2) ['fri', {…}]
+2: (2) ['sat', {…}]
+*/
+
+const hoursMap = new Map(Object.entries(openingHours));
+console.log(hoursMap);
+/*
+0: {"thu" => Object}
+1: {"fri" => Object}
+2: {"sat" => Object}
+*/
+
+console.log(ques.get('question'));
+for (const [key, value] of ques) {
+  if (typeof key === 'number') {
+    console.log(`The answer: ${key} : ${value}`);
+  }
+}
+const ans = Number(prompt(`Enter your answer`));
+console.log(ans);
+
+console.log(ques.get(ques.get('correct') === ans));
