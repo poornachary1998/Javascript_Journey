@@ -818,3 +818,63 @@ script.js:806 [SECOND HALF] 76: ⚽ GOAL
 script.js:806 [SECOND HALF] 80: ⚽ GOAL
 script.js:806 [SECOND HALF] 92: � Yellow card
 */
+
+// Strings Part 1
+
+const airline = 'TAP Air Portugal';
+const plane = 'B101';
+
+console.log(airline[0]);
+console.log(airline[1]);
+console.log('A101'[2]);
+// T
+// A
+// 0
+
+// to know the length
+console.log(airline.length);
+// 16
+console.log('a10101'.length);
+// 6
+
+// Methods
+
+// indexOf
+// gives the first occurances
+console.log(airline.indexOf('r'));
+// 6
+
+// lastindexOf
+// to get the last occurance of
+
+console.log(airline.lastIndexOf('r'));
+// 10
+
+// we can also search for entire words
+console.log(airline.indexOf('Portugal'));
+// 8
+// this is case sensitive
+console.log(airline.indexOf('portugal'));
+// -1
+
+// slice method
+console.log(airline.slice(4));
+//Air Portugal
+
+console.log(airline.slice(4, 7));
+//Air
+
+// extract first word without indexOF
+console.log(airline.slice(0, airline.indexOf(' ')));
+//TAP
+
+// extract last word without indexof
+console.log(airline.slice(airline.lastIndexOf(' ')));
+//  Portugal >> this has the space infront
+
+console.log(airline.slice(airline.lastIndexOf(' ') + 1));
+//Portugal
+
+// to get the string from the end
+console.log(airline.slice(-2));
+//al
