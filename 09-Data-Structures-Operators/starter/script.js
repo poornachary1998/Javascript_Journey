@@ -878,3 +878,20 @@ console.log(airline.slice(airline.lastIndexOf(' ') + 1));
 // to get the string from the end
 console.log(airline.slice(-2));
 //al
+
+console.log(airline.slice(1, -1));
+// AP Air Portuga
+
+// exercise: write a program to check if you got a middle seat or not
+// in general B and E will be the middle seats
+const middleSeat = function (seat) {
+  const s = seat.slice(-1);
+  if (s === 'B' || s === 'E') {
+    console.log(`congrats! you got middle seat`);
+  } else {
+    console.log('you are not lucky');
+  }
+};
+middleSeat('11B');
+middleSeat('13C');
+middleSeat('2E');
