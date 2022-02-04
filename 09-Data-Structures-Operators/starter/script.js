@@ -959,3 +959,16 @@ checkBaggage('I have Knife, GUN');
 checkBaggage('I have fOOD');
 // You are not allowed
 // Welcome abroad
+
+// capitalize using split,join,push methods
+
+const sampleName = function (names) {
+  const splitName = names.split(' ');
+  const nameArray = [];
+  for (const n of splitName) {
+    nameArray.push(n[0].toUpperCase() + n.slice('1'));
+  }
+  console.log(nameArray.join(' '));
+};
+sampleName('poorna chary');
+sampleName('charan');
