@@ -895,3 +895,67 @@ const middleSeat = function (seat) {
 middleSeat('11B');
 middleSeat('13C');
 middleSeat('2E');
+
+// working with strings part-2
+
+// changing case in string
+
+const passenger = 'JoNas';
+console.log(passenger.toLowerCase());
+// jonas
+
+console.log(passenger.toUpperCase());
+// JONAS
+
+// comparing emails
+const email1 = 'hello@poorna.io';
+const emailLogin = ' HelLO@Poorna@I0 \n';
+// make the values true
+// console.log(emailLogin.toLowerCase());
+//  hello@poorna@i0 >>has extra spaces to remove front and last extra spaces we use trim()
+console.log(emailLogin.toLowerCase().trim());
+// hello@poorna@i0
+
+// replace parts in string
+
+const priceGB = '234,35*';
+console.log(priceGB.replace('*', '$').replace(',', '.'));
+// 234.35$
+// replace is case sensitive it works only for first occurance
+
+// replaceAll for all occurances
+// example
+const announcements = 'welcome gate 23. gate 23';
+// replace gate with door
+
+console.log(announcements.replaceAll('gate', 'door'));
+// welcome door 23. door 23
+
+// alternative wayis regular expressions
+console.log(announcements.replace(/gate/g, 'door'));
+
+// booleans includes(), startsWith() , endsWith()
+const plane1 = 'A352';
+console.log(plane1.includes('A'));
+// true
+
+console.log(plane1.startsWith('A'));
+// true
+
+console.log(plane1.endsWith('A'));
+// false
+
+// learning time - exercise
+
+const checkBaggage = function (items) {
+  const baggage = items.toLowerCase();
+  if (baggage.includes('gun') || baggage.includes('knife')) {
+    console.log(`You are not allowed`);
+  } else {
+    console.log('Welcome abroad');
+  }
+};
+checkBaggage('I have Knife, GUN');
+checkBaggage('I have fOOD');
+// You are not allowed
+// Welcome abroad
