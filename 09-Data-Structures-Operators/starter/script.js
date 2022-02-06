@@ -976,7 +976,12 @@ sampleName('charan');
 const maskCreditCard = function (number) {
   const str = number + '';
   const last = str.slice(-4);
+  console.log(last);
   return last.padStart(str.length, '*');
 };
 console.log(maskCreditCard('23456789098765456789'));
 console.log(maskCreditCard(234564567879));
+
+// repeat
+
+// coding challenge 4
