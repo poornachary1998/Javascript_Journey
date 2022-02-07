@@ -1,5 +1,5 @@
 'use strict';
-
+/*
 const bookings = [];
 
 const createBooking = function (
@@ -32,3 +32,30 @@ createBooking('d;ec', 2, 223);
 createBooking('efe', undefined, 22);
 // {flightName: 'efe', numPass: 1, price: 22}
 // to skip any middle argument use undefined
+
+*/
+
+const flight = 'AB!23'; //primitive data type
+const jonas = {
+  namef: 'jonas sched',
+  passport: 984956,
+};
+
+const checkIn = function (flightNum, passenger) {
+  flightNum = 'CD234';
+  passenger.namef = 'MR. ' + passenger.namef;
+
+  if (passenger.passport === 984956) {
+    alert('Check IN');
+  } else {
+    alert('OUT!!');
+  }
+};
+
+checkIn(flight, jonas);
+console.log(flight);
+console.log(jonas);
+// AB!23
+// {namef: 'MR. jonas sched', passport: 984956}
+
+// realtime challenge
