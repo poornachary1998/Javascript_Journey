@@ -59,3 +59,9 @@ console.log(jonas);
 // {namef: 'MR. jonas sched', passport: 984956}
 
 // realtime challenge
+
+const newPassport = function (passenger) {
+  passenger.passport = Math.trunc(Math.random() * 10000000);
+};
+newPassport(jonas);
+checkIn(flight, jonas);
