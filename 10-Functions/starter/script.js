@@ -103,3 +103,22 @@ original String: Javascript is the best language
 transformedString is: javascriptisthebestlanguage
 trnasformed function name is oneWord
 */
+
+// function returning the new functions
+
+const greet = function (greeting) {
+  return function (name) {
+    console.log(`${greeting} ${name}`);
+  };
+};
+const greeter = greet('HI');
+greeter('Jonas');
+greeter('Poorna');
+
+// or
+greet('Hi')('Jonas');
+
+// the same code in arrow functions
+const greetArr = greeting => name => console.log(`${greeting} ${name}`);
+
+greetArr('Hi')('Jonas');
