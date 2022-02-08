@@ -1,5 +1,7 @@
 'use strict';
 /*
+DEFAULT PARAMETERS
+
 const bookings = [];
 
 const createBooking = function (
@@ -34,7 +36,9 @@ createBooking('efe', undefined, 22);
 // to skip any middle argument use undefined
 
 */
+/*
 
+// CALL BY VALUE VS REFERENCE
 const flight = 'AB!23'; //primitive data type
 const jonas = {
   namef: 'jonas sched',
@@ -65,3 +69,37 @@ const newPassport = function (passenger) {
 };
 newPassport(jonas);
 checkIn(flight, jonas);
+
+*/
+//
+// oneWord function
+const oneWord = function (str) {
+  return str.replaceAll(' ', '').toLowerCase();
+};
+// upperFirstWord function
+const upperFirstWord = function (str) {
+  const [first, ...others] = str.split(' ');
+  return [first.toUpperCase(), ...others].join(' ');
+};
+
+// High order function
+const transformer = function (str, fn) {
+  console.log(`original String: ${str}`);
+
+  console.log(`transformedString is: ${fn(str)}`);
+
+  console.log(`trnasformed function name is ${fn.name}`);
+};
+
+transformer('Javascript is the best language', upperFirstWord);
+/*
+original String: Javascript is the best language
+transformedString is: JAVASCRIPT is the best language
+trnasformed function name is upperFirstWord
+*/
+transformer('Javascript is the best language', oneWord);
+/*
+original String: Javascript is the best language
+transformedString is: javascriptisthebestlanguage
+trnasformed function name is oneWord
+*/
