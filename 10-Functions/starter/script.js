@@ -241,3 +241,17 @@ bookSW(9, 'Gmomez');
 
 const bookEW1 = book.bind(eurowings, 1);
 bookEW1('Poornachary');
+// Poornachary booked the flight EuroWings and the seat number is EW1
+
+// bind in event listeners
+
+tata.planes = 200;
+tata.buyPlanes = function () {
+  console.log(this);
+  this.planes++;
+  console.log(this.planes);
+};
+
+document
+  .querySelector('.buy')
+  .addEventListener('click', tata.buyPlanes.bind(tata));
