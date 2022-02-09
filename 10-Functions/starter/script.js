@@ -221,3 +221,18 @@ console.log(swiss);
 
 book.call(swiss, ...flightData);
 // hero booked the flight Swiss and the seat number is SW6
+
+// Bind method
+
+const bookEW = book.bind(eurowings);
+// bookEW is the variable hold the bind which creates the separate this keyword for eurowings
+// similarly
+const bookSW = book.bind(swiss);
+const bookTA = book.bind(tata);
+
+bookEW(7, 'heroine');
+bookTA(8, 'Ratan');
+bookSW(9, 'Gmomez');
+
+// we dont need to use the this.bookEW/SW/TA because this keyword is declared already in
+// bookEW/SW/TA using bind
