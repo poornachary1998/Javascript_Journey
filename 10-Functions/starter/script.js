@@ -122,3 +122,89 @@ greet('Hi')('Jonas');
 const greetArr = greeting => name => console.log(`${greeting} ${name}`);
 
 greetArr('Hi')('Jonas');
+
+// call and apply methods
+
+const tata = {
+  airline: 'Tata',
+  iatacode: 'TA',
+  bookings: [],
+  // book:function(){};
+  book(flightNum, name) {
+    console.log(
+      `${name} booked the flight ${this.airline} and the seat number is ${this.iatacode}${flightNum}`
+    );
+
+    this.bookings.push({ flight: `${this.iatacode}, ${flightNum}`, name });
+  },
+};
+tata.book(1, 'poorna');
+// poorna booked the flight Tata and the seat number is TA1
+
+tata.book(2, 'chary');
+// chary booked the flight Tata and the seat number is TA2
+
+console.log(tata);
+/*
+{airline: 'Tata', iatacode: 'TA', bookings: Array(2), book: ƒ}
+airline: "Tata"
+book: ƒ book(flightNum, name)
+bookings: Array(2)
+0: {flight: 'TA, 1', name: 'poorna'}
+1: {flight: 'TA, 2', name: 'chary'}
+length: 2
+[[Prototype]]: Array(0)
+iatacode: "TA"
+[[Prototype]]: Object */
+
+// Now tata group acquired the eurowings flight
+
+const eurowings = {
+  airline: 'EuroWings',
+  iatacode: 'EW',
+  bookings: [],
+};
+// we already have book function instead of writing the code we simple load the function in value
+
+const book = tata.book;
+
+// the book is value / function for Eurowings so the this keyword in tata object will not work.
+
+// book(3, 'narisng'); //>> gives error undefined because this keyword is available in tata object.
+
+// so we need to call this keyword explicitly using 3 function methods,
+
+book.call(eurowings, 4, 'narsing');
+// narsing booked the flight EuroWings and the seat number is EW4
+
+console.log(eurowings);
+/*
+{airline: 'EuroWings', iatacode: 'EW', bookings: Array(1)}
+airline: "EuroWings"
+bookings: Array(1)
+0: {flight: 'EW, 4', name: 'narsing'}
+length: 1
+[[Prototype]]: Array(0)
+iatacode: "EW"
+[[Prototype]]: Object
+ */
+
+// similar way Tata acquired the swiss flight
+
+const swiss = {
+  airline: 'Swiss',
+  iatacode: 'SW',
+  bookings: [],
+};
+
+book.call(swiss, 5, 'family');
+// family booked the flight Swiss and the seat number is SW5
+
+console.log(swiss);
+/**
+ {airline: 'Swiss', iatacode: 'SW', bookings: Array(1)}
+airline: "Swiss"
+bookings: [{…}]
+iatacode: "SW"
+[[Prototype]]: Object
+ */
