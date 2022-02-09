@@ -236,3 +236,8 @@ bookSW(9, 'Gmomez');
 
 // we dont need to use the this.bookEW/SW/TA because this keyword is declared already in
 // bookEW/SW/TA using bind
+
+// we can use multiple parametes in bind
+
+const bookEW1 = book.bind(eurowings, 1);
+bookEW1('Poornachary');
