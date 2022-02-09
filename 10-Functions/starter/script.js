@@ -208,3 +208,16 @@ bookings: [{…}]
 iatacode: "SW"
 [[Prototype]]: Object
  */
+
+// Apply function method
+// same as call function but uses array
+
+const flightData = [6, 'hero'];
+
+book.apply(swiss, flightData);
+console.log(swiss);
+
+// apply method is no more in ES6 reason the apply work can be done using call function
+
+book.call(swiss, ...flightData);
+// hero booked the flight Swiss and the seat number is SW6
