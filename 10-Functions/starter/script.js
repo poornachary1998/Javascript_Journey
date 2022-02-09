@@ -255,3 +255,22 @@ tata.buyPlanes = function () {
 document
   .querySelector('.buy')
   .addEventListener('click', tata.buyPlanes.bind(tata));
+
+// partial application
+const addTax = (rate, value) => value + value * rate;
+// general way
+console.log(addTax(0.1, 22));
+// using bind
+const addVAT = addTax.bind(null, 0.23);
+console.log(addVAT(100));
+console.log(addVAT(50));
+
+// assignment
+const oper = function (rate) {
+  return function (value) {
+    return value + value * rate;
+  };
+};
+
+const operInput = oper(0.23);
+console.log(operInput(100));
