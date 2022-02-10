@@ -282,6 +282,23 @@ console.log(operInput(100));
 })();
 
 (() => console.log(`This  will never run`))();
+
+// closures
+
+const secureBooking = function () {
+  let passengerCount = 0;
+
+  return function () {
+    passengerCount++;
+    console.log(`${passengerCount} : Passengers`);
+  };
+};
+
+const bookApp = secureBooking();
+bookApp();
+bookApp();
+bookApp();
+
 /*
 This is more of a thinking challenge than a coding challenge �
 Your tasks:
