@@ -300,6 +300,7 @@ bookApp();
 bookApp();
 
 // More closure examples
+// Example 1
 
 let f;
 const g = function () {
@@ -343,6 +344,19 @@ console.dir(f);
 
  */
 
+// Example 2
+
+const boardPassengers = function (n, wait) {
+  const perGroup = n / 3;
+  setTimeout(function () {
+    console.log(`The total number of passengers are ${n}`);
+    console.log(`We are onborading in ${perGroup} groups, so please cooperate`);
+  }, wait * 1000);
+
+  console.log(`We are on bording passengers in ${wait} minutes`);
+};
+
+boardPassengers(180, 3);
 /*
 This is more of a thinking challenge than a coding challenge �
 Your tasks:
