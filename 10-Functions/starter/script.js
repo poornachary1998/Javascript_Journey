@@ -309,11 +309,39 @@ const g = function () {
   };
 };
 
+const h = function () {
+  const b = 200;
+  f = function () {
+    console.log(b * 2);
+  };
+};
+
 g();
 f();
+console.dir(f);
+
+/**
+ *  f()length: 0name: "f"prototype: {constructor: ƒ}arguments: (...)caller: (...)[[FunctionLocation]]: script.js:307[[Prototype]]: 
+ * ƒ ()[[Scopes]]: Scopes[3]
+ * 0: Closure (g) {a: 20}
+ * 1:Script {oneWord: ƒ, upperFirstWord: ƒ, transformer: ƒ, greet: ƒ, greeter: ƒ, …}
+ * 2: Global {window: Window, self: Window, document: document, name: '', location: Location, …}
+
+ */
+
 // 60
 
+h();
+f();
 console.dir(f);
+
+/**
+ * ƒ f()length: 0name: "f"prototype: constructor: ƒ ()[[Prototype]]: Objectarguments: (...)caller: (...)[[FunctionLocation]]: script.js:314[[Prototype]]: ƒ ()apply: ƒ apply()arguments: (...)bind: ƒ bind()call: ƒ call()caller: (...)constructor: ƒ Function()length: 0name: ""toString: ƒ toString()Symbol(Symbol.hasInstance): ƒ [Symbol.hasInstance]()get arguments: ƒ ()set arguments: ƒ ()get caller: ƒ ()set caller: ƒ ()[[FunctionLocation]]: ​[[Prototype]]: Object[[Scopes]]: Scopes[0][[Scopes]]: Scopes[3]
+ * 0: Closure (h) {b: 200}
+ * 1: Script {oneWord: ƒ, upperFirstWord: ƒ, transformer: ƒ, greet: ƒ, greeter: ƒ, …}
+ * 2: Global {window: Window, self: Window, document: document, name: '', location: Location, …}
+
+ */
 
 /*
 This is more of a thinking challenge than a coding challenge �
