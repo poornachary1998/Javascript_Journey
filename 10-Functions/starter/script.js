@@ -311,6 +311,9 @@ const g = function () {
 
 g();
 f();
+// 60
+
+console.dir(f);
 
 /*
 This is more of a thinking challenge than a coding challenge �
