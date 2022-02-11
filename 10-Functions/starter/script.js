@@ -299,6 +299,19 @@ bookApp();
 bookApp();
 bookApp();
 
+// More closure examples
+
+let f;
+const g = function () {
+  const a = 20;
+  f = function () {
+    console.log(a * 3);
+  };
+};
+
+g();
+f();
+
 /*
 This is more of a thinking challenge than a coding challenge �
 Your tasks:
