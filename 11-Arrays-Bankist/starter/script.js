@@ -76,4 +76,63 @@ const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 /////////////////////////////////////////////////
 let arr = ['a', 'e', 'i', 'o', 'u'];
 console.log(arr.slice(2));
+// ['i', 'o', 'u']
 console.log(arr.slice(2,4));
+// ['i', 'o']
+console.log(arr.slice(-1));
+// ['u']
+console.log(arr.slice(-3));
+//  ['i', 'o', 'u']
+console.log(arr.slice(1,-2));
+// ['e', 'i']
+
+
+// shallow copy
+console.log(arr.slice());
+// ['a', 'e', 'i', 'o', 'u']
+console.log([...arr]);
+// ['a', 'e', 'i', 'o', 'u']
+
+// splice method
+// same as slice but splice mutates/changes the original array
+
+const arr1 = ['a','b','c','d','e','f','g'];
+
+
+
+// console.log(arr1.splice(2));
+// ['c', 'd', 'e', 'f', 'g']
+// console.log(arr1);
+// ['a', 'b']
+
+
+console.log(arr1.splice(-1));
+// ['g']
+console.log(arr1);
+// ['a', 'b', 'c', 'd', 'e', 'f']
+
+console.log(arr1.splice(1,2));
+// ['b', 'c']
+console.log(arr1);
+// ['a', 'd', 'e', 'f']
+
+// reverse
+// reverse also will mutate the string
+arr = ['a','b','c','d','e'];
+const arr2 = ['j','i','h','g','f'];
+console.log(arr2.reverse());
+// ['f', 'g', 'h', 'i', 'j']
+
+console.log(arr2);
+// ['f', 'g', 'h', 'i', 'j'] mutates the string
+
+// CONCAT
+console.log(arr.concat(arr2));
+// ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j']
+
+console.log(...arr,...arr2);
+// a b c d e f g h i j
+
+// JOIN method
+console.log((arr.concat(arr2)).join('--'));
+// a--b--c--d--e--f--g--h--i--j
