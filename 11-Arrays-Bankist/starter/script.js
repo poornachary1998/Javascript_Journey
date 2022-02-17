@@ -136,3 +136,22 @@ console.log(...arr,...arr2);
 // JOIN method
 console.log((arr.concat(arr2)).join('--'));
 // a--b--c--d--e--f--g--h--i--j
+
+// AT Method
+
+const arr3 = ['1','2','3'];
+console.log(arr3[0]);
+// 1
+console.log(arr3[2]);
+// 3
+console.log(arr3.at(0));
+console.log(arr3.at(2));
+// 1
+// 3
+
+console.log(arr3[arr3.length-1]);
+// 3
+console.log(arr3.at(-1));
+// 3
+
+console.log('jonas'.at(0));
