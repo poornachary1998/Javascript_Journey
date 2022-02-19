@@ -65,11 +65,7 @@ const inputClosePin = document.querySelector('.form__input--pin');
 /////////////////////////////////////////////////
 // LECTURES
 
-const currencies = new Map([
-  ['USD', 'United States dollar'],
-  ['EUR', 'Euro'],
-  ['GBP', 'Pound sterling'],
-]);
+
 
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
@@ -113,6 +109,38 @@ movements.forEach(function (mov, i ,arr){
  Movement 7: You deposited 70
  Movement 8: You deposited 13
 */
+console.log(`ForEach with maps `);
+const currencies = new Map([
+  ['USD', 'United States dollar'],
+  ['EUR', 'Euro'],
+  ['GBP', 'Pound sterling'],
+]);
+
+currencies.forEach(function(value,key,map){
+  console.log(`${key}:${value}`);
+})
+/**
+ * ForEach with maps and sets
+script.js:120 USD:United States dollar
+script.js:120 EUR:Euro
+script.js:120 GBP:Pound sterling
+ */
+console.log(`ForEach with sets`);
+
+const uniqueSet = new Set(['USD','GBM','IND','GBM','IND','USD']);
+console.log(uniqueSet);
+// {'USD', 'GBM', 'IND'}
+uniqueSet.forEach(function(value, key, map){
+  console.log(`${key}:${value}`);
+  console.log(`${value}:${value}`);
+  
+})
+// USD:USD
+// GBM:GBM
+// IND:IND
+// the output of key and value are same because in sets we dont have keys
+// so we can remove key and keep _ in function
+// _ means throwback function which is not used
 
 /*
 /////////////////////////////////////////////////
