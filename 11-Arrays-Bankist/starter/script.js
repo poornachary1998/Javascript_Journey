@@ -73,6 +73,48 @@ const currencies = new Map([
 
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
+console.log(`-----------------for - of loop-----------------`);
+for( const mov of movements){
+  if (mov>0){
+    console.log(`You have deposited : ${mov}`);
+  }
+  else{
+    console.log(`You have with drew: ${Math.abs(mov)}`);
+  }
+}
+
+console.log(`---------For each loop--------------`);
+movements.forEach(function(mov){
+  if (mov>0){
+    console.log(`You have deposited : ${mov}`);
+  }
+  else{
+    console.log(`You have with drew: ${Math.abs(mov)}`);
+  }
+
+})
+
+console.log(`for each with order of arguments current element, index, array`);
+movements.forEach(function (mov, i ,arr){
+  if(mov>0){
+    console.log(`Movement ${i+1}: You deposited ${mov}`);
+  }
+  else{
+    console.log(`Movement ${i+1}: You withdrew ${Math.abs(mov)}`);
+  }
+})
+/* for each with order of arguments current element, index, array
+ Movement 1: You deposited 200
+ Movement 2: You deposited 450
+ Movement 3: You withdrew 400
+ Movement 4: You deposited 3000
+ Movement 5: You withdrew 650
+ Movement 6: You withdrew 130
+ Movement 7: You deposited 70
+ Movement 8: You deposited 13
+*/
+
+/*
 /////////////////////////////////////////////////
 let arr = ['a', 'e', 'i', 'o', 'u'];
 console.log(arr.slice(2));
@@ -155,3 +197,4 @@ console.log(arr3.at(-1));
 // 3
 
 console.log('jonas'.at(0));
+*/
