@@ -1,6 +1,4 @@
 'use strict';
-
-/////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // BANKIST APP
 
@@ -61,6 +59,116 @@ const inputLoanAmount = document.querySelector('.form__input--loan-amount');
 const inputCloseUsername = document.querySelector('.form__input--user');
 const inputClosePin = document.querySelector('.form__input--pin');
 
+
+const dispalyMovements = function(movements){
+
+  containerMovements.innerHTML = '';
+  // .textContent = 0;
+  // defaulr data is removed by innerHTML
+  movements.forEach(function (mov,i){
+
+    const type = mov>0 ? 'deposit':'withdrawal';
+
+    const html = `
+    <div class="movements__row">
+    <div class="movements__type movements__type--${type}">${i+1} ${type}</div>
+    <div class="movements__value">${mov}</div>
+    `;
+    
+
+  // for adding the new movements row in container we use insertAdjacentHTML()
+containerMovements.insertAdjacentHTML('afterbegin', html)
+
+  });
+};
+dispalyMovements(account1.movements);
+// console.log(containerMovements.innerHTML);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // LECTURES
@@ -109,6 +217,7 @@ movements.forEach(function (mov, i ,arr){
  Movement 7: You deposited 70
  Movement 8: You deposited 13
 */
+/*
 console.log(`ForEach with maps `);
 const currencies = new Map([
   ['USD', 'United States dollar'],
@@ -124,7 +233,7 @@ currencies.forEach(function(value,key,map){
 script.js:120 USD:United States dollar
 script.js:120 EUR:Euro
 script.js:120 GBP:Pound sterling
- */
+ 
 console.log(`ForEach with sets`);
 
 const uniqueSet = new Set(['USD','GBM','IND','GBM','IND','USD']);
@@ -135,12 +244,42 @@ uniqueSet.forEach(function(value, key, map){
   console.log(`${value}:${value}`);
   
 })
+*/
+
 // USD:USD
 // GBM:GBM
 // IND:IND
 // the output of key and value are same because in sets we dont have keys
 // so we can remove key and keep _ in function
 // _ means throwback function which is not used
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /*
 /////////////////////////////////////////////////
