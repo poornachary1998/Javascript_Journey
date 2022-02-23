@@ -84,6 +84,32 @@ containerMovements.insertAdjacentHTML('afterbegin', html)
 dispalyMovements(account1.movements);
 // console.log(containerMovements.innerHTML);
 
+// map method
+
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+
+const euroToUsd = 1.1;
+
+const movementsUSD = movements.map(function(mov){
+  return mov * euroToUsd;
+});
+console.log(movements);
+console.log(movementsUSD);
+
+// same above example with for of 
+const newArr = [];
+
+for(const mov of movements) newArr.push(mov * euroToUsd);
+console.log(newArr 
+);
+
+
+
+
+
+
+
+
 
 /**
  * 
