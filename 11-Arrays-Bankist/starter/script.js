@@ -82,17 +82,58 @@ containerMovements.insertAdjacentHTML('afterbegin', html)
   });
 };
 dispalyMovements(account1.movements);
+
+const user = 'Poorna Chary Narsingosu'; //pcn
+
+const username = user.toLowerCase().split(' ').map(name => name[0]).join('');
+// map(function (name)
+// {return name[0]}).join('');
+
+console.log(username);
+//after using split ['poorna', 'chary', 'narsingosu']
+// map(function (name){return name[0]});['p', 'c', 'n']
+// .join('') pcn;
+
+
+
+
+
+
+
 // console.log(containerMovements.innerHTML);
 
-// map method
+/*
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
+const movementsDescription = movements.map
+((mov, i) => `Movement ${i+1}: You ${mov >0 ? 'deposited' : 'withdrew'} ${Math.abs(mov)}`);
+
+console.log(movementsDescription);
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+// map method
+/*
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 const euroToUsd = 1.1;
 
-const movementsUSD = movements.map(function(mov){
-  return mov * euroToUsd;
-});
+// const movementsUSD = movements.map(function(mov){
+//   return mov * euroToUsd;
+// });
+
+const movementsUSD = movements.map(mov => mov * euroToUsd);
 console.log(movements);
 console.log(movementsUSD);
 
@@ -102,6 +143,7 @@ const newArr = [];
 for(const mov of movements) newArr.push(mov * euroToUsd);
 console.log(newArr 
 );
+*/
 
 
 
@@ -136,7 +178,7 @@ Test data:
 § Data 2: Julia's data [9, 16, 6, 8, 3], Kate's data [10, 5, 6, 1, 4]
 Hints: Use tools from all lectures in this section so far 
  */
-
+/*
 const checkDogs = function (dogsJulia, dogsKate){
 const juliaCorrected = dogsJulia.slice();
 // console.log(juliaCorrected);
@@ -168,7 +210,7 @@ checkDogs([9, 16, 6, 8, 3],[10, 5, 6, 1, 4]);
 
 
 
-
+*/
 
 
 
