@@ -85,11 +85,19 @@ dispalyMovements(account1.movements);
 
 const user = 'Poorna Chary Narsingosu'; //pcn
 
-const username = user.toLowerCase().split(' ').map(name => name[0]).join('');
+const createUserName = function (accs){
+  accs.forEach(function (acc){
+  acc.username =  user.toLowerCase().split(' ').map(name => name[0]).join('');
+  });
+};
+createUserName(accounts);
+console.log(accounts);
+
+
 // map(function (name)
 // {return name[0]}).join('');
 
-console.log(username);
+// console.log(username);
 //after using split ['poorna', 'chary', 'narsingosu']
 // map(function (name){return name[0]});['p', 'c', 'n']
 // .join('') pcn;
