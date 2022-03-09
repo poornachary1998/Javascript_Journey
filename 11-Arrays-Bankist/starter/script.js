@@ -18,8 +18,8 @@ const account2 = {
 };
 
 const account3 = {
-  owner: 'SCharan Singh',
-  movements: [200, -200, 340, -300, -20, 50, 400, -460],
+  owner: 'Charan Singh',
+  movements: [200, -200, 340, -300, 5000, -20, 50, 400, -460],
   interestRate: 0.7,
   pin: 3333,
 };
@@ -81,35 +81,34 @@ containerMovements.insertAdjacentHTML('afterbegin', html)
 // if we use the beforeend then the elements are reversed
   });
 };
-dispalyMovements(account1.movements);
 
-const displayLabelBalance  =  function(movements){
-  const balance = movements
+const displayLabelBalance  =  function(acc){
+  acc.balance = acc.movements
   .reduce((acc,mov)=>acc+mov,0);
-  labelBalance.textContent = `${balance} EUR`
+  // acc.balance = balance;
+  labelBalance.textContent = `${acc.balance} EUR`
 }
-displayLabelBalance(account1.movements);
 
-const calcDisplaySummary = function(movements)
+const calcDisplaySummary = function(acc)
 {
-  const incomes = movements
+  const incomes = acc.movements
   .filter(mov => mov>0)
   .reduce((acc,mov) => acc + mov ,0);
   labelSumIn.textContent = `${incomes}€`;
 
 
-const outcomes = movements
+const outcomes = acc.movements
 .filter(mov => mov<0)
 .reduce((acc,mov) => acc+ mov,0)
 labelSumOut.textContent = `${Math.abs(outcomes)}€`;
 
 
-const intrest = movements
+const intrest = acc.movements
 .filter(mov => mov>0)
-.map(deposit => deposit *1.2/100)
+.map(deposit => deposit * acc.interestRate /100)
 // now if bank applies a rule it pays only intest only if intrest is more than 1 Euro
 .filter((int,i, arr)=>{
-  console.log(arr);
+  // console.log(arr);
   return int>=1;
 })
 .reduce((acc, int)=> acc+int,0)
@@ -119,16 +118,81 @@ labelSumInterest.textContent = `${intrest}€`;
 
 };
 
-calcDisplaySummary(account1.movements);
-const user = 'Poorna Chary Narsingosu'; //pcn
 
 const createUserName = function (accs){
   accs.forEach(function (acc){
-  acc.username =  user.toLowerCase().split(' ').map(name => name[0]).join('');
+  acc.username =  acc.owner.toLowerCase().split(' ').map(name => name[0]).join('');
   });
 };
 createUserName(accounts);
-console.log(accounts);
+// Update UI - after making transfers the movements and summary and current balance should show the correct amount
+const updateUI = function(acc){
 
-// Event handleers
+// Display Movements
+dispalyMovements(acc.movements);
+  // Display Balance
+displayLabelBalance(acc)
+  // Display summary
+calcDisplaySummary(acc);
 
+}
+
+// Event handlers
+let currentAccount;
+
+btnLogin.addEventListener('click', function (e){
+// prevent form submitting when clicked / pressed enter key
+  e.preventDefault();
+
+  currentAccount = accounts.find(acc => acc.username === inputLoginUsername.value);
+  console.log(currentAccount);
+
+  if(currentAccount?.pin === Number(inputLoginPin.value))
+{
+  // Display UI and message
+labelWelcome.textContent = `Welcome back, ${currentAccount.owner}`
+containerApp.style.opacity = 100;
+// clear fields
+inputLoginUsername.value = inputLoginPin.value = '';
+// assignment works from right to left, The above line to clear credential after login
+
+inputLoginPin.blur();
+// update UI for current account
+updateUI(currentAccount);
+
+}
+});
+// Transferring money
+btnTransfer.addEventListener('click', function(e){
+  e.preventDefault();
+
+  const amount = Number(inputTransferAmount.value);
+  // To check if the transfer account is an existing account in the app or not we use find method which will check the username for which we are transferring amount is an existing one or not
+
+  const receiverAccount = accounts.find(acc => acc.username === inputTransferTo.value);
+console.log(amount, receiverAccount);
+
+// cleanout inputs
+inputTransferAmount.value = inputTransferTo.value = '';
+
+// checking the amount to transfer is a positive number or not
+// check if the reciever account is existing or not, we are using receiveraccount and  optional chaining for that
+// also current account balance should be minimum of sending amount 
+// also we should not transfer the money to our own account
+
+
+if(amount>0 && receiverAccount&& currentAccount.balance >= amount && receiverAccount?.username !== currentAccount.username){
+// console.log(`Transfer valid`);
+
+
+// We need to add negative movement for sender and positive movement for money receiver
+
+currentAccount.movements.push(-amount);
+receiverAccount.movements.push(amount);
+
+// update UI for current account
+updateUI(currentAccount);
+
+
+}
+})
