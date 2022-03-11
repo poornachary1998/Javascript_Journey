@@ -192,7 +192,23 @@ receiverAccount.movements.push(amount);
 
 // update UI for current account
 updateUI(currentAccount);
-
-
 }
+})
+// close account
+btnClose.addEventListener('click',function(e){
+  e.preventDefault();
+
+  if(currentAccount.username === inputCloseUsername.value && currentAccount.pin === Number(inputClosePin.value) ){
+
+let index = accounts.findIndex(acc => acc.username === currentAccount.username)
+  // Delete account
+accounts.splice(index,1);
+  // Hide UI / logout
+  containerApp.style.opacity = 0;
+  // clear fields after logout
+
+  }
+// clear fields
+  inputCloseUsername.value = inputClosePin.value = '';
+
 })
