@@ -194,6 +194,25 @@ receiverAccount.movements.push(amount);
 updateUI(currentAccount);
 }
 })
+
+ btnLoan.addEventListener('click',function(e){
+   e.preventDefault();
+
+   const amount = Number(inputLoanAmount.value);
+// condition the amount for load request should be >0 and there should be transaction should be greater than 10% of deposit amount
+   if(amount>0 && currentAccount.movements.some(mov => mov >= amount / 100)){
+
+    // Add movement to current data
+
+    currentAccount.movements.push(amount);
+
+    // update UI
+    updateUI(currentAccount);
+
+   }
+   inputLoanAmount.value = ''; 
+ })
+
 // close account
 btnClose.addEventListener('click',function(e){
   e.preventDefault();
