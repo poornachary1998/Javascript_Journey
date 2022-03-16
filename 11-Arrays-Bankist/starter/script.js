@@ -60,12 +60,16 @@ const inputCloseUsername = document.querySelector('.form__input--user');
 const inputClosePin = document.querySelector('.form__input--pin');
 
 
-const dispalyMovements = function(movements){
+const dispalyMovements = function(movements, sort = false){
 
   containerMovements.innerHTML = '';
+// sort ? means if sort is true then
+// : means else  // 
+const movs = sort ? movements.slice().sort((a,b) => a-b): movements;
+
   // .textContent = 0;
   // defaulr data is removed by innerHTML
-  movements.forEach(function (mov,i){
+  movs.forEach(function (mov,i){
 
     const type = mov>0 ? 'deposit':'withdrawal';
 
@@ -230,4 +234,18 @@ accounts.splice(index,1);
 // clear fields
   inputCloseUsername.value = inputClosePin.value = '';
 
+})
+// preserving the original movement so that if we click on the sort button twice we need to get the origial movements
+let sorted = false;
+
+// Now when the user clicks the sort button ,we need to callback function-
+// - sort is set to true and arranges from small to large movements
+
+btnSort.addEventListener('click', function(e){
+  e.preventDefault();
+// dispalyMovements(currentAccount.movements ,  true);
+dispalyMovements(currentAccount.movements ,  !sorted);
+// true>> then it sorts the movements
+sorted = !sorted;
+// now the new value of sorted is TRUE
 })

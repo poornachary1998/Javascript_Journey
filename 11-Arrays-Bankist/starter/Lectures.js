@@ -361,3 +361,31 @@ Test data:
 GOOD LUCK �
 */
 ``
+// flat
+const arr = [[1,2,3],4,[5,6,7],8];
+console.log(arr.flat());
+
+const arrDeep =  [[1,[2,3]],[4,[5,6,7]],8];
+console.log(arrDeep.flat());
+console.log(arrDeep.flat(2));
+
+// requirement is to know total amount present in the bank
+// All the transactions are in movements object in accounts array
+
+// const accountMovements = accounts.map(acc => acc.movements);
+// console.log(accountMovements);
+
+//we need to use flat method to show the all movements in single array
+// const allMovements = accountMovements.flat();
+// console.log(allMovements);
+// we need to bring the sum value to the bank by calculating all the movements
+
+// const oveallMoney = allMovements.reduce((acc,mov )=> acc + mov,0);
+// console.log(oveallMoney);
+
+// const overallMoney = accounts.flatMap(acc => acc.movements).reduce((acc,mov)=>acc+mov,0);
+// console.log(overallMoney); 
+
+
+// const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+ 
