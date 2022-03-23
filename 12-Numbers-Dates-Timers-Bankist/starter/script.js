@@ -317,3 +317,12 @@ console.log(parseInt('23px', 10));
 // 23
 console.log(parseFloat('23.89'));
 // 23.89
+
+// BigInt
+console.log(BigInt(12345678987654323456789876543234567898765432345678n));
+
+// creating dates
+const now = new Date();
+console.log(now);
+
+console.log(new Date('25 Dec 2021'));
