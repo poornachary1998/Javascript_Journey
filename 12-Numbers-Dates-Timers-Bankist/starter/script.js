@@ -51,8 +51,8 @@ const account1 = {
     '2020-04-01T10:17:24.185Z',
     '2020-05-08T14:11:59.604Z',
     '2020-05-27T17:01:17.194Z',
-    '2020-07-11T23:36:17.929Z',
-    '2020-07-12T10:51:36.790Z',
+    '2022-03-23T17:29:48.018Z',
+    '2022-03-24T17:29:48.018Z',
   ],
   currency: 'EUR',
   locale: 'pt-PT', // de-DE
@@ -71,8 +71,8 @@ const account2 = {
     '2020-01-25T14:18:46.235Z',
     '2020-02-05T16:33:06.386Z',
     '2020-04-10T14:43:26.374Z',
-    '2020-06-25T18:49:59.371Z',
-    '2020-07-26T12:01:20.894Z',
+    '2022-03-23T17:29:48.018Z',
+    '2022-03-24T17:29:48.018Z',
   ],
   currency: 'USD',
   locale: 'en-US',
@@ -110,6 +110,23 @@ const inputClosePin = document.querySelector('.form__input--pin');
 /////////////////////////////////////////////////
 // Functions
 
+const formatMovementsDate = function (date) {
+  const daysPassed = (date1, date2) =>
+    Math.round(Math.abs(date2 - date1) / (24 * 60 * 60 * 1000));
+
+  const daysPassedBetween = daysPassed(new Date(), date);
+  console.log(daysPassedBetween);
+
+  if (daysPassedBetween === 0) return 'Today';
+  if (daysPassedBetween === 0) return 'Yesterday';
+  if (daysPassedBetween <= 7) return `${daysPassedBetween} day(s) ago`;
+
+  const day = `${date.getDate()}`.padStart(2, 0);
+  const month = `${date.getMonth() + 1}`.padStart(2, 0);
+  const year = date.getFullYear();
+  return `${day}/${month}/${year}`;
+};
+
 const displayMovements = function (acc, sort = false) {
   containerMovements.innerHTML = '';
 
@@ -119,13 +136,8 @@ const displayMovements = function (acc, sort = false) {
 
   movs.forEach(function (mov, i) {
     const type = mov > 0 ? 'deposit' : 'withdrawal';
-
     const date = new Date(acc.movementsDates[i]);
-    const day = `${date.getDate()}`.padStart(2, 0);
-    const month = `${date.getMonth() + 1}`.padStart(2, 0);
-    const year = date.getFullYear();
-    const displayDate = `${day}/${month}/${year}`;
-
+    const displayDate = formatMovementsDate(date);
     const html = `
       <div class="movements__row">
         <div class="movements__type movements__type--${type}">${
@@ -359,3 +371,19 @@ console.log(BigInt(12345678987654323456789876543234567898765432345678n));
 // console.log(now);
 
 console.log(new Date('25 Dec 2021'));
+
+// Date to Number - how many date back the action took place, ex: 3 days ago
+
+const future = new Date(2037, 10, 19, 15, 23);
+console.log(future);
+// console.log(Number(future));
+console.log(+future); //2142237180000
+
+const daysPassed = (date1, date2) =>
+  Math.abs(date2 - date1) / (24 * 60 * 60 * 1000);
+// abs used to avoid negative ouptuts if the date2 is smaller
+
+const days1 = daysPassed(new Date(2037, 10, 13), new Date(2037, 10, 17));
+console.log(days1);
+const future1 = new Date();
+console.log(future1.toISOString());
