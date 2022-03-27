@@ -39,7 +39,7 @@ const account4 = {
 // DIFFERENT DATA! Contains movement dates, currency and locale
 
 const account1 = {
-  owner: 'Jonas Schmedtmann',
+  owner: 'Poorna Chary',
   movements: [200, 455.23, -306.5, 25000, -642.21, -133.9, 79.97, 1300],
   interestRate: 1.2, // %
   pin: 1111,
@@ -59,7 +59,7 @@ const account1 = {
 };
 
 const account2 = {
-  owner: 'Jessica Davis',
+  owner: 'Rohith Kumar',
   movements: [5000, 3400, -150, -790, -3210, -1000, 8500, -30],
   interestRate: 1.5,
   pin: 2222,
@@ -78,7 +78,47 @@ const account2 = {
   locale: 'en-US',
 };
 
-const accounts = [account1, account2];
+const account3 = {
+  owner: 'Nithish Bharadwaj',
+  movements: [430, 1000, 700, 50, 90, 2500, 10000, 3000],
+  interestRate: 1,
+  pin: 4444,
+
+  movementsDates: [
+    '2019-11-01T13:15:33.035Z',
+    '2019-11-30T09:48:16.867Z',
+    '2019-12-25T06:04:23.907Z',
+    '2020-01-25T14:18:46.235Z',
+    '2020-02-05T16:33:06.386Z',
+    '2020-04-10T14:43:26.374Z',
+    '2022-03-23T17:29:48.018Z',
+    '2022-03-24T17:29:48.018Z',
+  ],
+  currency: 'INR',
+  locale: 'en-US',
+};
+
+const account4 = {
+  owner: 'Charan Singh',
+  movements: [430, 1000, -700, 50, 90, -2500, 10000, 3000, 1000],
+  interestRate: 1.9,
+  pin: 3333,
+
+  movementsDates: [
+    '2019-11-01T13:15:33.035Z',
+    '2019-11-30T09:48:16.867Z',
+    '2019-12-25T06:04:23.907Z',
+    '2020-01-25T14:18:46.235Z',
+    '2020-02-05T16:33:06.386Z',
+    '2020-04-10T14:43:26.374Z',
+    '2022-03-23T17:29:48.018Z',
+    '2022-03-24T17:29:48.018Z',
+    '2022-03-27T17:29:48.018Z',
+  ],
+  currency: 'INR',
+  locale: 'en-US',
+};
+const accounts = [account1, account2, account3, account4];
 
 /////////////////////////////////////////////////
 // Elements
@@ -230,7 +270,7 @@ const startLogoutTimer = function () {
   };
   //set the timer to 5 minutes
 
-  let time = 300;
+  let time = 600;
   // call the timer every second
   tick();
   const timer = setInterval(tick, 1000);
@@ -391,71 +431,3 @@ btnSort.addEventListener('click', function (e) {
   displayMovements(currentAccount.movements, !sorted);
   sorted = !sorted;
 });
-
-/////////////////////////////////////////////////
-/////////////////////////////////////////////////
-// LECTURES
-console.log(25 === 25.0);
-
-// convert string to number
-console.log(Number('23'));
-// alternative, + does the ty[pe coresion
-console.log(+'23');
-
-// parsing
-console.log(Number.parseInt('23px'));
-// 23
-console.log(Number.parseInt('px23'));
-// Nan
-// The string should start with Number
-// Parse int also accept the second parameter
-// THe second parameter should be the base
-// if we are using the base 10 from 0 to 9 should mention in parse int as 10
-
-console.log(Number.parseInt('23px', 10));
-// 23
-// if we are using the base 2 from 0 and 1 should mention in parse int as 2
-
-console.log(Number.parseInt('23px', 2));
-// NaN
-
-// similar way we have parsefloat
-console.log(Number.parseFloat('23.33px', 10));
-//23.33
-console.log(Number.parseInt('23.33px', 10));
-// 23
-
-// parseInt and parseFloat are called global functions
-// we need not to call them on number it also works like thisds
-
-console.log(parseInt('23px', 10));
-// 23
-console.log(parseFloat('23.89'));
-// 23.89
-
-// BigInt
-console.log(BigInt(12345678987654323456789876543234567898765432345678n));
-
-// // creating dates
-// const now = new Date();
-// console.log(now);
-
-console.log(new Date('25 Dec 2021'));
-
-// Date to Number - how many date back the action took place, ex: 3 days ago
-
-const future = new Date(2037, 10, 19, 15, 23);
-console.log(future);
-// console.log(Number(future));
-console.log(+future); //2142237180000
-
-const daysPassed = (date1, date2) =>
-  Math.abs(date2 - date1) / (24 * 60 * 60 * 1000);
-// abs used to avoid negative ouptuts if the date2 is smaller
-
-const days1 = daysPassed(new Date(2037, 10, 13), new Date(2037, 10, 17));
-console.log(days1);
-const future1 = new Date();
-console.log(future1.toISOString());
-
-setTimeout(() => console.log('Here is your Pizza'), 3000);
