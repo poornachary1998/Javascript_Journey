@@ -34,7 +34,32 @@ document.addEventListener('keydown', function (e) {
 const btnScrollTo = document.querySelector('.btn--scroll-to');
 const section1 = document.querySelector('#section--1');
 
-btnScrollTo.addEventListener('click',funtcion(e)){
-
+btnScrollTo.addEventListener('click', function (e) {
   // We need to get the coordinates
-}
+  const s1coords = section1.getBoundingClientRect();
+  console.log(s1coords);
+
+  console.log(e.target.getBoundingClientRect());
+
+  console.log('current scroll {X/Y)', window.pageXOffset, pageYOffset);
+
+  console.log(
+    'height / width viewport',
+    document.documentElement.clientHeight,
+    document.documentElement.clientWidth
+  );
+  // scrolling
+
+  // window.scrollTo({
+  //   left: s1coords.left + window.pageXOffset,
+  //   top: s1coords.top + window.pageYOffset,
+  //   behavior: 'smooth',
+  // });
+  section1.scrollIntoView({ behavior: 'smooth' });
+});
+const h1 = document.querySelector('h1');
+const alerth1 = function (e) {
+  alert('addEventListener: You are reading heading');
+
+  h1.removeEventListner('mouseenter', alerth1);
+};
