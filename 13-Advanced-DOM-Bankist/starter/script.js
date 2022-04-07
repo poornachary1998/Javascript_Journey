@@ -1,13 +1,15 @@
 'use strict';
 
-///////////////////////////////////////
-// Modal window
+const btnScrollTo = document.querySelector('.btn--scroll-to');
+const section1 = document.querySelector('#section--1');
 
 const modal = document.querySelector('.modal');
 const overlay = document.querySelector('.overlay');
 const btnCloseModal = document.querySelector('.btn--close-modal');
 const btnsOpenModal = document.querySelectorAll('.btn--show-modal');
 
+///////////////////////////////////////
+// Modal window
 const openModal = function (e) {
   e.preventDefault();
   modal.classList.remove('hidden');
@@ -31,9 +33,8 @@ document.addEventListener('keydown', function (e) {
     closeModal();
   }
 });
-const btnScrollTo = document.querySelector('.btn--scroll-to');
-const section1 = document.querySelector('#section--1');
 
+// button scrolling
 btnScrollTo.addEventListener('click', function (e) {
   // We need to get the coordinates
   const s1coords = section1.getBoundingClientRect();
@@ -57,42 +58,15 @@ btnScrollTo.addEventListener('click', function (e) {
   // });
   section1.scrollIntoView({ behavior: 'smooth' });
 });
-const h1 = document.querySelector('h1');
-const alerth1 = function (e) {
-  alert('addEventListener: You are reading heading');
 
-  h1.removeEventListener('mouseenter', alerth1);
-};
-// event propagation in practise
+// navigation
 
-const randomInt = (max, min) =>
-  Math.floor(Math.random() * (max - min + 1) + min);
-
-const randomColor = () =>
-  `rgb(${randomInt(0, 255)},${randomInt(0, 255)},${randomInt(0, 255)})`;
-
-// we are adding rgb colour to elements in nav bar and for parent of elements
-// .nav__links , .nav__link , .nav
-
-document.querySelector('.nav__link').addEventListener('click', function (e) {
-  this.style.backgroundColor = randomColor();
-  console.log('Link', e.target, e.currentTarget);
-  // this returns on which class we clicked and how target is moving in  DOM;
-  // stop propagation
-  // e.stopPropagation();
-});
 document.querySelector('.nav__links').addEventListener('click', function (e) {
-  this.style.backgroundColor = randomColor();
-  console.log('Link', e.target, e.currentTarget);
-  // this returns on which class we clicked and how target is moving in  DOM
-});
-// if we click parent, child element does not change.
-// if we click child element parent also changes
+  e.preventDefault();
+  // Machine strategy
 
-document.querySelector('.nav').addEventListener('click', function (e) {
-  this.style.backgroundColor = randomColor();
-  // if we click parent, child element does not change.
-  // if we click child element parent also changes
-  console.log('Link', e.target, e.currentTarget);
-  // this returns on which class we clicked and how target is moving in  DOM
+  if (e.target.classList.contains('nav__link')) {
+    const id = e.target.getAttribute('href');
+    document.querySelector(id).scrollIntoView({ behavior: 'smooth' });
+  }
 });

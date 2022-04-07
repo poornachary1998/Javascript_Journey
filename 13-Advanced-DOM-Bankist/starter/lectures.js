@@ -51,3 +51,45 @@ message.style.width = '50%';
 
 document.documentElement.style.setProperty('--color-primary', 'orangered');
 // attributes
+
+// hover
+const h1 = document.querySelector('h1');
+const alerth1 = function (e) {
+  alert('addEventListener: You are reading heading');
+
+  h1.removeEventListener('mouseenter', alerth1);
+};
+
+// event propagation in practise
+
+const randomInt = (max, min) =>
+  Math.floor(Math.random() * (max - min + 1) + min);
+
+const randomColor = () =>
+  `rgb(${randomInt(0, 255)},${randomInt(0, 255)},${randomInt(0, 255)})`;
+
+// we are adding rgb colour to elements in nav bar and for parent of elements
+// .nav__links , .nav__link , .nav
+
+document.querySelector('.nav__link').addEventListener('click', function (e) {
+  this.style.backgroundColor = randomColor();
+  console.log('Link', e.target, e.currentTarget);
+  // this returns on which class we clicked and how target is moving in  DOM;
+  // stop propagation
+  // e.stopPropagation();
+});
+document.querySelector('.nav__links').addEventListener('click', function (e) {
+  this.style.backgroundColor = randomColor();
+  console.log('Link', e.target, e.currentTarget);
+  // this returns on which class we clicked and how target is moving in  DOM
+});
+// if we click parent, child element does not change.
+// if we click child element parent also changes
+
+document.querySelector('.nav').addEventListener('click', function (e) {
+  this.style.backgroundColor = randomColor();
+  // if we click parent, child element does not change.
+  // if we click child element parent also changes
+  console.log('Link', e.target, e.currentTarget);
+  // this returns on which class we clicked and how target is moving in  DOM
+});
